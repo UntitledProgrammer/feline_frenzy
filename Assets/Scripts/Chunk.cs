@@ -5,29 +5,23 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
     //Attributes:
+    public Vector2 flag_position;
     public Vector2 perimeter;
     public Vector2 offset;
+    private const float radius = 1.0f;
+
+    //Properties:
+    public Vector2 FlagPosition { get => (Vector2)transform.position + flag_position; }
+    public Vector2 Centre { get => perimeter + offset; }
 
     //Methods:
     public virtual void Spawn() {  }
     public virtual void Despawn() {  }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Chunk temp = GameObject.Instantiate(this).GetComponent<Chunk>();
-        temp.transform.position = transform.position;
-        temp.transform.position += (Vector3.right * perimeter.x);
-        temp.transform.SetParent(transform.parent);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Destroy(gameObject);
-    }
-
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube((Vector2)transform.position + offset, perimeter);
+        Gizmos.DrawSphere((Vector2)transform.position + flag_position, radius);
+        Gizmos.DrawWireCube(transform.position + (Vector3)offset, (Vector3)perimeter);
     }
 }

@@ -5,30 +5,27 @@ using UnityEngine;
 public class ChunkLoader : MonoBehaviour
 {
     //Attributes:
-    public Vector2 perimeter;
-    public BoxCollider2D trigger;
-    public string tag;
+    public Chunk start;
+    public Transform player_transform;
+    private const float tolerance = 1.0f;
 
     //Methods:
-    private void Start()
+    private float Distance(Vector2 a, Vector2 b)
     {
-        trigger = GetComponent<BoxCollider2D>();
+        a.y = 0.0f;
+        b.y = 0.0f;
+
+        return Vector2.Distance(a, b);
     }
 
     private void Update()
     {
-        
-    }
+        if (Distance(start.FlagPosition, player_transform.position) > tolerance) return;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (trigger.tag != tag) return;
-        
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, perimeter);
+        //Player has passed flag...
+        Chunk temp = GameObject.Instantiate(start.gameObject).GetComponent<Chunk>();
+        temp.transform.position = start.transform.position + Vector3.right * start.perimeter.x;
+        temp.transform.SetParent(transform);
+        start = temp;
     }
 }
