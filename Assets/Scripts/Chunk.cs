@@ -8,7 +8,7 @@ public class Chunk : MonoBehaviour
     public Vector2 flag_position;
     public Vector2 perimeter;
     public Vector2 offset;
-    private const float radius = 1.0f;
+    private const float radius = 0.25f;
 
     //Properties:
     public Vector2 FlagPosition { get => (Vector2)transform.position + flag_position; }
