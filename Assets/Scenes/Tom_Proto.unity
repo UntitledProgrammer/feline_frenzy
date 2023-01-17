@@ -198,10 +198,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.974, y: -3.366, z: -9.471141}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -0.6005857, y: 0.40642762, z: -7.712814}
+  m_LocalScale: {x: 0.75851, y: 0.75851, z: 0.75851}
   m_Children: []
-  m_Father: {fileID: 987320832}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614313794
@@ -340,12 +340,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987320831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.487, y: 1.683, z: -0.5288588}
-  m_LocalScale: {x: 0.379255, y: 0.379255, z: 0.75851}
-  m_Children:
-  - {fileID: 519420032}
+  m_LocalPosition: {x: -1.96, y: -2.8, z: -0.5288588}
+  m_LocalScale: {x: 0.104726456, y: 0.104726456, z: 0.20945291}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &987320833
 Rigidbody2D:
@@ -457,9 +456,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid_body: {fileID: 0}
-  jump_force: 8
+  jump_force: 40
   jump_key: 32
-  distance: 0.81
+  raycast_distance: 0.17
 --- !u!1 &1065415535
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,10 +492,7 @@ MonoBehaviour:
   start: {fileID: 1718187262}
   player_transform: {fileID: 987320832}
   chunks:
-  - {fileID: 4418961947607486293, guid: c8962ac4a53c4124c940eecb736ccd64, type: 3}
-  - {fileID: 8826043358358299110, guid: 51a9fe53cbfc8fe4c9ed77691a93169c, type: 3}
-  - {fileID: 7741553450824780395, guid: c987db28b8e69524daf7fa39e34aa0d8, type: 3}
-  - {fileID: 9132703439606830889, guid: de3818a85c0f03647914a1d50e0fb0e1, type: 3}
+  - {fileID: 1718187262}
 --- !u!114 &1065415537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45a1ef5e5ae4aa4780366925cf5ad6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 7
+  velocity: 2
   direction: {x: -1, y: 0, z: 0}
 --- !u!4 &1065415538
 Transform:
@@ -524,7 +520,7 @@ Transform:
   m_Children:
   - {fileID: 1718187265}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227292337
 GameObject:
@@ -665,8 +661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b841c59f97e5b14292643ff8b43f93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag_position: {x: 17.9, y: 0}
-  perimeter: {x: 46.8, y: 0.89}
+  flag_position: {x: 8.04, y: 0}
+  perimeter: {x: 18.24, y: 0.4}
   offset: {x: 0, y: 0}
 --- !u!61 &1718187263
 BoxCollider2D:
@@ -752,8 +748,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718187261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.51, y: 0.14055282, z: 0.9554982}
-  m_LocalScale: {x: 12.409191, y: 2.387975, z: 9.5519}
+  m_LocalPosition: {x: 1.39, y: -3.53, z: 0.9554982}
+  m_LocalScale: {x: 4.8075156, y: 0.9251391, z: 3.7005565}
   m_Children:
   - {fileID: 614313795}
   - {fileID: 2072902772}

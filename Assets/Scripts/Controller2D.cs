@@ -9,22 +9,42 @@ public class Controller2D : MonoBehaviour
     public Rigidbody2D rigid_body;
     public float jump_force;
     public KeyCode jump_key;
-    public float distance;
+    public float raycast_distance;
+    private float jump_counter;
+    private bool in_jump = false;
+    private const float jump_max = 0.14f;
 
     //Properties:
-    public bool is_grounded { get { return Physics2D.Raycast(transform.position, -transform.up, distance).collider != null; } }
+    public bool IsGrounded { get { return Physics2D.Raycast(transform.position, -transform.up, raycast_distance).collider != null; } }
 
     //Methods:
-    private void Start() => rigid_body = GetComponent<Rigidbody2D>();
+    public void Jump()
+    {
+
+    }
+
+    private void Start() { rigid_body = GetComponent<Rigidbody2D>(); jump_counter = jump_max; }
 
     private void Update()
     {
-        if (Input.GetKeyDown(jump_key) && is_grounded) { rigid_body.AddForce(transform.up * jump_force, ForceMode2D.Impulse); }
+        if (!in_jump && !IsGrounded) return;
+
+        if(jump_counter > 0.0f && Input.GetKey(jump_key))
+        {
+            rigid_body.AddForce(transform.up * jump_force * Time.deltaTime, ForceMode2D.Impulse);
+            jump_counter -= Time.deltaTime;
+            in_jump = true;
+        }
+        else if(jump_counter <= 0.0f || Input.GetKeyUp(jump_key))
+        {
+            jump_counter = jump_max;
+            in_jump = false;
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3.down * distance));
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3.down * raycast_distance));
     }
 }
