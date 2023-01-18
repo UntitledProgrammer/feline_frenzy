@@ -10,6 +10,7 @@ public class SpringArm : MonoBehaviour
     public float raycastDistance;
     private Vector2 pivot;
     private Rigidbody2D m_rigidbody;
+    private const float tolerance = 0.1f;
 
     //Properties:
     private bool IsClear { get => Physics2D.Raycast(transform.position, Vector2.right, raycastDistance).collider == null; }
@@ -23,9 +24,9 @@ public class SpringArm : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Mathf.Abs(pivot.x - transform.position.x) <= 0.1f || !IsClear) return;
+        if (Mathf.Abs(pivot.x - transform.position.x) <= tolerance || !IsClear) return;
 
-        Vector2 direction = new Vector2(pivot.x - transform.position.x, 0.0f);
+        Vector2 direction = Vector2.right * (pivot.x - transform.position.x);
         m_rigidbody.AddForce(Time.deltaTime * force * direction, ForceMode2D.Impulse);
     }
 
