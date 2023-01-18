@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ *  Returns a gameObject to its point of origin when it's position becomes offset from the point of origin.
+ * 
+ *  @owner: Thomas Jacobs | S212046.
+ *  @project: Feline Frenzy.
+ */
 [RequireComponent(typeof(Rigidbody2D))]
 public class SpringArm : MonoBehaviour
 {
     //Attributes:
     public float force;
     public float raycastDistance;
-    private Vector2 pivot;
+    private Vector2 origin;
     private Rigidbody2D m_rigidbody;
     private const float tolerance = 0.1f;
 
@@ -19,14 +25,14 @@ public class SpringArm : MonoBehaviour
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
-        pivot = transform.position;
+        origin = transform.position;
     }
 
     private void LateUpdate()
     {
-        if (Mathf.Abs(pivot.x - transform.position.x) <= tolerance || !IsClear) return;
+        if (Mathf.Abs(origin.x - transform.position.x) <= tolerance || !IsClear) return;
 
-        Vector2 direction = Vector2.right * (pivot.x - transform.position.x);
+        Vector2 direction = Vector2.right * (origin.x - transform.position.x);
         m_rigidbody.AddForce(Time.deltaTime * force * direction, ForceMode2D.Impulse);
     }
 
