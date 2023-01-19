@@ -33,7 +33,7 @@ public class SpringArm : MonoBehaviour
         if (Mathf.Abs(origin.x - transform.position.x) <= tolerance || !IsClear) return;
 
         Vector2 direction = Vector2.right * (origin.x - transform.position.x);
-        m_rigidbody.AddForce(Time.deltaTime * force * direction, ForceMode2D.Impulse);
+        transform.position += (Vector3)(Time.deltaTime * force * direction);
     }
 
     private void OnDrawGizmos()
@@ -42,3 +42,5 @@ public class SpringArm : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + Vector3.right * raycastDistance);
     }
 }
+
+//m_rigidbody.AddForce(Time.deltaTime * force * direction, ForceMode2D.Impulse);

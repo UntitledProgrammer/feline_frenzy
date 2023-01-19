@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
     public Vector3 direction;
 
     //Methods:
-    private void Update()
+    private void FixedUpdate()
     {
         transform.position += direction *  velocity * Time.deltaTime;
     }
