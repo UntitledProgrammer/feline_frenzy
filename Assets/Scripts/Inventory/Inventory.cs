@@ -7,7 +7,9 @@ namespace FelineFrenzy.Inventory
     public class Inventory : ScriptableObject
     {
         //Attributes:
+        private string m_name;
         private uint balance;
+
 
         //Properties:
         public uint Balance { get => balance; }
