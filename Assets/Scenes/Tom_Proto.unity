@@ -1773,9 +1773,7 @@ MonoBehaviour:
   start: {fileID: 1718187262}
   player_transform: {fileID: 987320832}
   chunks:
-  - {fileID: 3564617997110821811, guid: ed4193c38a436ed4a95ba68624cca056, type: 3}
-  - {fileID: 8666916705732325799, guid: acfbf73ce0add5543ab7767cc39930b4, type: 3}
-  - {fileID: 8096358397099504286, guid: 3d5f8860e3aac824e87a8a0349aefd97, type: 3}
+  - {fileID: 4647377119927735902, guid: bf399baf080748244905c8bc61336dbb, type: 3}
 --- !u!114 &1065415537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,12 +2821,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1718187261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b841c59f97e5b14292643ff8b43f93e, type: 3}
+  m_Script: {fileID: 11500000, guid: efd4bdeab5133fb49af14200ddbe1f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag: 15.83
-  extent: 9.51
-  pivot: {x: 0, y: 0}
+  extent: 9
+  flagPosition: 16.42
+  offset: {x: -1.11, y: 0}
 --- !u!61 &1718187263
 BoxCollider2D:
   m_ObjectHideFlags: 0

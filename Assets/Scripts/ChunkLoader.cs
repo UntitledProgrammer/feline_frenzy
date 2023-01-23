@@ -13,9 +13,9 @@ namespace FelineFrenzy.Core
     public class ChunkLoader : MonoBehaviour
     {
         //Attributes:
-        public Chunk start;
+        public Collection start;
         public Transform player_transform;
-        public List<Chunk> chunks = new List<Chunk>();
+        public List<Collection> chunks = new List<Collection>();
         private const float tolerance = 1.0f;
         private const float delay = 8.0f;
 
@@ -28,7 +28,7 @@ namespace FelineFrenzy.Core
             return Vector2.Distance(a, b);
         }
 
-        private Chunk NextChunk()
+        private Collection NextChunk()
         {
             return chunks[Random.Range(0, chunks.Count)];
         }
@@ -38,8 +38,8 @@ namespace FelineFrenzy.Core
             if (Distance(start.FlagPosition, player_transform.position) > tolerance) return;
 
             //Player has passed flag...
-            Chunk temp = GameObject.Instantiate(NextChunk().gameObject).GetComponent<Chunk>();
-            temp.transform.position = start.Right + Vector2.right * temp.extent;
+            Collection temp = GameObject.Instantiate(NextChunk().gameObject).GetComponent<Collection>();
+            temp.Left = start.Right;
             temp.transform.SetParent(transform);
 
             Destroy(start.gameObject, delay);
