@@ -39,7 +39,7 @@ namespace FelineFrenzy.Core
 
             //Player has passed flag...
             Chunk temp = GameObject.Instantiate(NextChunk().gameObject).GetComponent<Chunk>();
-            temp.transform.position = start.Right + Vector2.right * temp.extent;
+            temp.transform.position = start.Right + Vector2.right * temp.extent + temp.pivot;
             temp.transform.SetParent(transform);
 
             Destroy(start.gameObject, delay);
