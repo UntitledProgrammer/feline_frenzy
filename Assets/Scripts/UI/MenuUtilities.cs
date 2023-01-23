@@ -7,6 +7,6 @@ using UnityEngine.UI;
 public class MenuUtilities : MonoBehaviour
 {
     //Methods:
-    public static void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-    public static void Quit() => Application.Quit();
+    public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    public void Quit() => Application.Quit();
 }

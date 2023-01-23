@@ -21,10 +21,10 @@ namespace FelineFrenzy.Core
         //Properties:
         public Vector2 Left { get => ((Vector2)transform.position + pivot) + Vector2.left * extent; }
         public Vector2 FlagPosition { get => Left + Vector2.right * flag; }
-        public float Length { get => extent + extent; }
         public Vector2 Right { get => ((Vector2)transform.position + pivot) + Vector2.right * extent; }
         public Vector2 Offset { get => (Vector2)transform.position + pivot; }
         public Vector2 Centre { get => ((Vector2)transform.position + pivot); }
+        public float Length { get => extent + extent; }
 
         //Methods:
         public virtual void Spawn() { }
