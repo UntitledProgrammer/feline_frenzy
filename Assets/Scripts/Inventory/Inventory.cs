@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace FelineFrenzy.Inventory
 {
+    [CreateAssetMenu(fileName = "Inventory", menuName = "Inventory", order = 0)]
     public class Inventory : ScriptableObject
     {
         //Attributes:
         private string m_name;
-        private uint balance;
-
+        public uint balance;
 
         //Properties:
         public uint Balance { get => balance; }

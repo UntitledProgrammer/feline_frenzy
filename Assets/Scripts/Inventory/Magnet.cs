@@ -2,49 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Magnet : MonoBehaviour
+namespace FelineFrenzy.Interaction
 {
-    //Attributes:
-    public float radius;
-    public float attraction;
-    public LayerMask mask;
-    private List<GameObject> targets;
-    private const float tolerance = 0.2f;
-
-    //Methods:
-    private void Start() => targets = new List<GameObject>();
-
-    private void Update()
+    public class Magnet : MonoBehaviour
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, Vector2.one, 0.0f);
-        if (hit.collider != null)
+        //Attributes:
+        public FelineFrenzy.Inventory.Inventory inventory;
+        public float radius;
+        public float attraction;
+        public LayerMask mask;
+        private List<GameObject> targets;
+        private const float tolerance = 0.2f;
+
+        //Methods:
+        private void Start()
         {
-            hit.collider.enabled = false;
-            targets.Add(hit.collider.gameObject);
+            if (inventory == null) Destroy(this);
+            targets = new List<GameObject>();
         }
-    }
 
-    private void LateUpdate()
-    {
-        if (targets.Count <= 0) return;
-
-        for (int i = targets.Count - 1; i >= 0; i--)
+        private void Update()
         {
-            Vector2 direction = (transform.position - targets[i].transform.position).normalized;
-            targets[i].transform.position += Time.deltaTime * attraction * (Vector3)direction;
-
-            if(Vector2.Distance(targets[i].transform.position, transform.position) <= tolerance)
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, Vector2.one, 0.0f, mask);
+            if (hit.collider != null)
             {
-                GameObject temp = targets[i];
-                targets.RemoveAt(i);
-                Destroy(temp);
+                hit.collider.enabled = false;
+                targets.Add(hit.collider.gameObject);
             }
         }
-    }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        private void LateUpdate()
+        {
+            if (targets.Count <= 0) return;
+
+            for (int i = targets.Count - 1; i >= 0; i--)
+            {
+                Vector2 direction = (transform.position - targets[i].transform.position).normalized;
+                targets[i].transform.position += Time.deltaTime * attraction * (Vector3)direction;
+
+                if (Vector2.Distance(targets[i].transform.position, transform.position) <= tolerance)
+                {
+                    //Update inventory.
+                    inventory.Add(targets[i].GetComponent<Coin>().value);
+
+                    //Remove gameObject from scene.
+                    GameObject temp = targets[i];
+                    targets.RemoveAt(i);
+                    Destroy(temp);
+                }
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, radius);
+        }
     }
 }
