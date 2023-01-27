@@ -8,6 +8,7 @@ namespace FelineFrenzy.Inventory
     public class Inventory : ScriptableObject
     {
         //Attributes:
+        public List<Appearance> appearances;
         private string m_name;
         public uint balance;
 
