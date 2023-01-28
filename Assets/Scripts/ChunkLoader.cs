@@ -16,6 +16,7 @@ namespace FelineFrenzy.Core
         public Collection start;
         public Transform player_transform;
         public List<Collection> chunks = new List<Collection>();
+        private Collection current;
         private const float tolerance = 1.0f;
         private const float delay = 8.0f;
 
@@ -35,7 +36,7 @@ namespace FelineFrenzy.Core
 
         private void Update()
         {
-            if (Distance(start.FlagPosition, player_transform.position) > tolerance) return;
+            //if (Distance(start.FlagPosition, player_transform.position) > tolerance) return;
 
             //Player has passed flag...
             Collection temp = GameObject.Instantiate(NextChunk().gameObject).GetComponent<Collection>();

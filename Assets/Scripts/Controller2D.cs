@@ -8,7 +8,7 @@ public struct PlayerRuntimeStatistics
 
 }
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(Animator))]
 public class Controller2D : FelineFrenzy.Core.Respawnable
 {
     //Attributes:
@@ -20,6 +20,7 @@ public class Controller2D : FelineFrenzy.Core.Respawnable
     private const float jump_max = 0.14f;
     private Collider2D m_collider;
     private Rigidbody2D rigid_body;
+    private Animator animator;
 
     //Properties:
     public bool IsGrounded { get { return Physics2D.Raycast(transform.position, -transform.up, raycast_distance).collider != null; } }
@@ -36,10 +37,14 @@ public class Controller2D : FelineFrenzy.Core.Respawnable
         base.Awake();  
         rigid_body = GetComponent<Rigidbody2D>(); jump_counter = jump_max;
         m_collider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        animator.SetBool("Jump", in_jump);
+        animator.SetFloat("VerticalAxis", rigid_body.velocity.y);
+
         if (!in_jump && !IsGrounded) return;
 
         if(jump_counter > 0.0f && Input.GetKey(jump_key))

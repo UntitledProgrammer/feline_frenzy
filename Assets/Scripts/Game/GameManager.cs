@@ -22,20 +22,20 @@ namespace FelineFrenzy.Core
     {
         //Attributes:
         [Header("Collection Settings")]
-        public Collection startCollection;
+        public Vector2 spawnPoint;
         public List<Collection> chunks = new List<Collection>();
+        private Collection previous, current;
         private Transform playerTransform;
-        private const float tolerance = 1.0f;
-        private const float delay = 8.0f;
+        private const float tolerance = 4.0f;
+        private const float delay = 2.0f;
 
         [Header("Main Settings")]
-        public Vector3 direction;
-        public float velocity;
         private uint health;
         private float timeActive;
         private static GameManager singleton;
         private uint attempts = 0;
         private const uint maxAttempts = 2;
+        private Vector2 previousPosition;
 
         //Properties:
         public static GameManager Singleton
@@ -56,22 +56,36 @@ namespace FelineFrenzy.Core
         private void Awake()
         {
             singleton = this;
-            playerTransform = FindObjectOfType<Controller2D>().transform;
+            playerTransform = FindObjectOfType<PlayerController>().transform;
 
             if (playerTransform == null) Application.Quit();
+            current = LoadNextChunk();
+            playerTransform.position = current.SpawnPoint;
+
         }
 
-        private float Distance(Vector2 a, Vector2 b)
+        private float Distance(Vector2 goal, Vector2 target)
         {
-            a.y = 0.0f;
-            b.y = 0.0f;
-
-            return Vector2.Distance(a, b);
+            return goal.x - target.x;
         }
 
-        private Collection NextChunk()
+        private Collection LoadNextChunk()
         {
-            return chunks[Random.Range(0, chunks.Count)];
+            Collection temp = Instantiate(chunks[Random.Range(0, chunks.Count)]).GetComponent<Collection>();
+
+            if(current == null)
+            {
+                temp.Left = (Vector3)spawnPoint + transform.position;
+            }
+            else
+            {
+                temp.Left = current.Right;
+            }
+
+            temp.transform.SetParent(transform);
+            current = temp;
+
+            return temp;
         }
 
         private void LateUpdate()
@@ -79,34 +93,32 @@ namespace FelineFrenzy.Core
             timeActive += Time.deltaTime;
 
             //Load next chunk?
-            if (Distance(startCollection.FlagPosition, playerTransform.position) > tolerance) return;
+            if (previous != null && Distance(current.Left, playerTransform.position) < -1.0f) { Destroy(previous.gameObject); }
+            if (Distance(current.Right, playerTransform.position) > tolerance) return;
 
             //Player has passed flag point.
-            Collection temp = GameObject.Instantiate(NextChunk().gameObject).GetComponent<Collection>();
-            temp.Left = startCollection.Right;
-            temp.transform.SetParent(transform);
-
-            Destroy(startCollection.gameObject, delay);
-            startCollection = temp;
+            previous = current;
+            current = LoadNextChunk();
         }
 
-        private void FixedUpdate()
+        public void OnPlayerExit(PlayerController controller)
         {
-            transform.position += direction * velocity * Time.deltaTime;
-        }
-
-        public void OnPlayerExit(Controller2D controller)
-        {
+            /*
             //If the player has reached the max attempts permitted, return to the main menu.
             if(++attempts >= maxAttempts) { Debug.Log("Game End"); return; }
 
+            if (current != null) Destroy(current);
+            current = origin;
+            origin.gameObject.SetActive(true);
+            */
 
-
+            playerTransform.position = current.SpawnPoint;
         }
 
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere((Vector2)transform.position + spawnPoint, 1.0f);
             //Gizmos.DrawWireCube()
         }
     }

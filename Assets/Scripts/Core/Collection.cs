@@ -14,10 +14,11 @@ namespace FelineFrenzy.Core
     {
         //Attributes:
         public float extent;
-        public float flagPosition;
         public Vector2 offset;
-        private const float radius = 0.2f;
+        public Vector2 spawnPoint;
+        protected const float radius = 0.2f;
         private const float flag = 1.0f;
+        private const float delay = 2.0f;
 
         //Properties:
         public Vector2 Centre { get => (Vector2)transform.position + offset; }
@@ -33,10 +34,15 @@ namespace FelineFrenzy.Core
             set => transform.position = value + (Vector2.left * extent) + offset;
         }
 
-        public Vector2 FlagPosition { get => Left + Vector2.right * flagPosition; }
+        public Vector2 SpawnPoint { get => spawnPoint + (Vector2)transform.position; }
 
         //Methods:
-        private void OnDrawGizmosSelected()
+        public virtual void Disable()
+        {
+            Destroy(gameObject, delay);
+        }
+
+        protected virtual void OnDrawGizmosSelected()
         {
             //Centre:
             Gizmos.color = Color.red;
@@ -54,10 +60,9 @@ namespace FelineFrenzy.Core
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(Left, Right);
 
-            //Flag:
-            if (FlagPosition.x > Right.x) flagPosition = extent * 2;
-            else if (flagPosition < 0) flagPosition = 0;
-            Gizmos.DrawLine(FlagPosition, FlagPosition + Vector2.up * flag);
+            //Spawn Point:
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(SpawnPoint, radius);
         }
     }
 }

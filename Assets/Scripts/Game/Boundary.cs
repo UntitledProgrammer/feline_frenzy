@@ -5,43 +5,20 @@ using UnityEngine;
 
 namespace FelineFrenzy.Game
 {
-    [System.Serializable]
-    public struct Laser
-    {
-        //Attributes:
-        public Vector2 direction;
-        public float distance;
-
-        //Constructors:
-        public Laser(Vector2 direction, float distance) { this.direction = direction; this.distance = distance; }
-    }
-
     public class Boundary : MonoBehaviour
     {
         //Attributes:
-        public Laser[] directions;
-        public LayerMask mask;
+        private PlayerController player;
 
         //Methods:
-        private void Start() { for (int i = 0; i < directions.Length; i++) directions[i].direction.Normalize(); }
+        private void Start() => player = FindObjectOfType<PlayerController>();
 
-        private void Update()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            for (int i = 0; i < directions.Length; i++)
+            if(collision.TryGetComponent<PlayerController>(out PlayerController player))
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, directions[i].direction, directions[i].distance, mask);
-
-                if(hit.collider == null && TryGetComponent<Controller2D>(out Controller2D player))
-                {
-                   // Core.GameManager.Singleton
-                }
+                Core.GameManager.Singleton.OnPlayerExit(player);
             }
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            for (int i = 0; i < directions.Length; i++) { Gizmos.DrawLine(transform.position, (Vector2)transform.position + directions[i].direction * directions[i].distance); }
         }
     }
 }
