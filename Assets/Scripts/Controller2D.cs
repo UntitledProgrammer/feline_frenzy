@@ -27,11 +27,6 @@ public class Controller2D : FelineFrenzy.Core.Respawnable
     public Collider2D Collider { get => m_collider; }
 
     //Methods:
-    public void Jump()
-    {
-
-    }
-
     protected override void Awake() 
     { 
         base.Awake();  
@@ -64,10 +59,5 @@ public class Controller2D : FelineFrenzy.Core.Respawnable
     {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, transform.position + (Vector3.down * raycast_distance));
-    }
-
-    private void OnDestroy()
-    {
-        
     }
 }
