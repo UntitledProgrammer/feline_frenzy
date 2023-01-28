@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 8
-  jumpForce: 10
+  jumpForce: 25
   spaceKey: 32
   raycastLength: 0.33
 --- !u!95 &987320838
