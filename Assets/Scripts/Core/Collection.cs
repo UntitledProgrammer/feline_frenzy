@@ -37,6 +37,8 @@ namespace FelineFrenzy.Core
         public Vector2 SpawnPoint { get => spawnPoint + (Vector2)transform.position; }
 
         //Methods:
+        public virtual void Enable() { }
+
         public virtual void Disable()
         {
             Destroy(gameObject, delay);

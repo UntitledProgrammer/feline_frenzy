@@ -42,4 +42,9 @@ public class MenuUtilities : MonoBehaviour
     {
         gameObject.SetActive(!gameObject.activeSelf);
     }
+
+    public void Toggle(GameObject target)
+    {
+        target.SetActive(!target.activeSelf);
+    }
 }
