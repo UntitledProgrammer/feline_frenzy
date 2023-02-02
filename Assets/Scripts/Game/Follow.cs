@@ -5,7 +5,8 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     //Attributes:
-    private Transform target;
+    public Vector2 offset;
+    public Transform target;
 
     //Methods:
     private void Awake()
@@ -17,6 +18,33 @@ public class Follow : MonoBehaviour
     public void Update()
     {
         if (target == null) { Debug.LogError("Player could not be located."); Destroy(this); }
-        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z) + (Vector3)offset;
+    }
+
+    public void Centre()
+    {
+        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z) + (Vector3)offset;
     }
 }
+
+#if UNITY_EDITOR
+[UnityEditor.CustomEditor(typeof(Follow))]
+public class FollowEditor : UnityEditor.Editor
+{
+    //Attributes:
+    private Follow self;
+
+    //Methods:
+    private void OnEnable()
+    {
+        self = (Follow)target;
+        if(self.target == null) self.target = FindObjectOfType<PlayerController>().transform;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        if (UnityEngine.GUILayout.Button("Centre")) { self.Centre(); }
+        DrawDefaultInspector();
+    }
+}
+#endif
