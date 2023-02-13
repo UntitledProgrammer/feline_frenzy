@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace FelineFrenzy.Core
 {
+    /*
     public class SpawnCollection : Collection
     {
         //Attributes:
@@ -27,4 +28,5 @@ namespace FelineFrenzy.Core
             Gizmos.DrawWireSphere(SpawnPoint, radius);
         }
     }
+    */
 }

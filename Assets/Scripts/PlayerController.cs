@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     //Attributes:
     public float horizontalSpeed;
     public float horizontalJumpSpeed;
     public float jumpForce;
+    public Vector2 bounds;
     public KeyCode spaceKey;
     public float raycastLength;
+    private float radius;
     private Rigidbody2D m_rigidbody;
     private Animator m_animator;
     private const string jumpKey = "jump";
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float jumpStamina;
 
     //Properties:
-    public bool IsGrounded { get => Physics2D.Raycast(m_rigidbody.transform.position, Vector2.down, raycastLength).collider != null; }
+    public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, raycastLength).collider != null; }
     private float Velocity { get => IsGrounded ? horizontalSpeed : horizontalJumpSpeed; }
 
     //Methods:
@@ -46,6 +48,8 @@ public class PlayerController : MonoBehaviour
             m_rigidbody.AddForce(transform.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
             jumpStamina -= Time.deltaTime;
         }
+
+        else if (Input.GetKeyUp(KeyCode.Space) && !isGrounded) { jumpStamina = 0.0f; }
         
         //Horizontal movement.
         m_rigidbody.AddForce(Vector2.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
@@ -56,5 +60,6 @@ public class PlayerController : MonoBehaviour
         //Draw raycast that checks whether a player is grounded.
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * raycastLength);
+        Gizmos.DrawWireCube(transform.position + Vector3.down * raycastLength, bounds);
     }
 }

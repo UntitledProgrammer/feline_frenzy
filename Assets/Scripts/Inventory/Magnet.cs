@@ -42,9 +42,6 @@ namespace FelineFrenzy.Interaction
 
                 if (Vector2.Distance(targets[i].transform.position, transform.position) <= tolerance)
                 {
-                    //Update inventory.
-                    inventory.Add(targets[i].GetComponent<Coin>().value);
-
                     //Remove gameObject from scene.
                     GameObject temp = targets[i];
                     targets.RemoveAt(i);

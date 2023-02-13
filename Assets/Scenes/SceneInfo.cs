@@ -14,12 +14,4 @@ public class SceneInfo : ScriptableObject
 
     //Properties:
     public string Name { get => sceneName; }
-
-    //Methods:
-    public void Awake()
-    {
-        unlocked = false;
-        record = 0.0f;
-        sceneName = Selection.activeObject is SceneAsset ? ((SceneAsset)Selection.activeObject).name : "empty";
-    }
 }
