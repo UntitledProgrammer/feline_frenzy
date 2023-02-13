@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 306721850}
   - component: {fileID: 306721848}
   - component: {fileID: 306721847}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: reset_boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2832,7 +2832,7 @@ RectTransform:
   m_GameObject: {fileID: 1247924245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8522, y: 1.8522, z: 1.8522}
   m_Children: []
   m_Father: {fileID: 1882359735}
   m_RootOrder: 5
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 11400000, guid: a37b73b6793c5524d8f07dc6a76defa7, type: 2}
-  end: {fileID: 11400000, guid: a37b73b6793c5524d8f07dc6a76defa7, type: 2}
+  end: {fileID: 11400000, guid: ae576e0031997c34e986f6052d111790, type: 2}
 --- !u!114 &1247924248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,8 +2877,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: eb72eddbc02197f4b8ad44d5b19084c2, type: 2}
+  m_sharedMaterial: {fileID: -7852402989200771611, guid: eb72eddbc02197f4b8ad44d5b19084c2,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3981,8 +3982,9 @@ MonoBehaviour:
   horizontalSpeed: 4.1
   horizontalJumpSpeed: 2.2
   jumpForce: 12
+  bounds: {x: 0.52, y: 0.05}
   spaceKey: 32
-  raycastLength: 0.33
+  raycastLength: 0.34
 --- !u!114 &1643191358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3996,8 +3998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 65a2cee8f0572c94e8b3e3416acfb4c9, type: 2}
-  radius: 2.98
-  attraction: 2
+  radius: 1.11
+  attraction: 8
   mask:
     serializedVersion: 2
     m_Bits: 256
