@@ -10,6 +10,7 @@ public class SceneInfo : ScriptableObject
     public string sceneName;
     public bool unlocked;
     public float record;
+    public float limit;
 
     //Properties:
     public string Name { get => sceneName; }

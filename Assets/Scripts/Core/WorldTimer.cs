@@ -12,7 +12,6 @@ namespace FelineFrenzy.Core
         //Attributes:
         public SceneInfo start;
         public SceneInfo end;
-        public float limit;
         private float time;
         private List<TimeWatch> watches;
         private TMPro.TextMeshProUGUI textbox;
@@ -29,7 +28,7 @@ namespace FelineFrenzy.Core
             time += Time.deltaTime;
             textbox.text = time.ToString("F");
 
-            if (time >= limit)
+            if (time >= start.limit)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(end.Name);
             }
