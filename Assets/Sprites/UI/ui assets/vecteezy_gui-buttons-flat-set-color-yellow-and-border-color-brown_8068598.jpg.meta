@@ -1,0 +1,968 @@
+fileFormatVersion: 2
+guid: a68c65e5c984836459a38558bf15c8cf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2362278939565231165
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_0
+  - first:
+      213: 8917363511932875476
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_1
+  - first:
+      213: -8286944069299573909
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_2
+  - first:
+      213: 629706907520756272
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_3
+  - first:
+      213: 8355406673828653668
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_4
+  - first:
+      213: 2302058220106936863
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_5
+  - first:
+      213: 8940974283771282921
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_6
+  - first:
+      213: 5135579682243959759
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_7
+  - first:
+      213: 5175208342681250824
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_8
+  - first:
+      213: -7722992367816342865
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_9
+  - first:
+      213: -6052268134318630726
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_10
+  - first:
+      213: 6674091490075599985
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_11
+  - first:
+      213: -3269815686519760143
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_12
+  - first:
+      213: -4598763313515954608
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_13
+  - first:
+      213: -3911191404654017106
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_14
+  - first:
+      213: -5465287770033809179
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_15
+  - first:
+      213: -1350414860739708783
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_16
+  - first:
+      213: -5715214983978418062
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_17
+  - first:
+      213: 4282059710338298503
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_18
+  - first:
+      213: -815208773677947986
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_19
+  - first:
+      213: 8902479405667949421
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_20
+  - first:
+      213: -7910296576610424875
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_21
+  - first:
+      213: -7134480471759173025
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_22
+  - first:
+      213: -6601590345013450451
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_23
+  - first:
+      213: 7975878876758810972
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_24
+  - first:
+      213: -1619640834440358197
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_25
+  - first:
+      213: -812402404929805858
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_26
+  - first:
+      213: 377345234948086809
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_27
+  - first:
+      213: -307283885713734916
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_28
+  - first:
+      213: -2248348775035467354
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_29
+  - first:
+      213: -5080924896580117262
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_30
+  - first:
+      213: 4664187113559143638
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_31
+  - first:
+      213: 69287795453614790
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_32
+  - first:
+      213: 1778191572203355504
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_33
+  - first:
+      213: -8565941977277523960
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_34
+  - first:
+      213: 5036351199903567887
+    second: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3f3d202df773fd0800000000000000
+      internalID: -2362278939565231165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2f9cd2ed6d0cb70800000000000000
+      internalID: 8917363511932875476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b6edb664cdefc80800000000000000
+      internalID: -8286944069299573909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a6267981b2db800800000000000000
+      internalID: 629706907520756272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a2c7bd91e54f370800000000000000
+      internalID: 8355406673828653668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_5
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12fdbd11cd82ff10800000000000000
+      internalID: 2302058220106936863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e507126db8b41c70800000000000000
+      internalID: 8940974283771282921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb5dd3f28e354740800000000000000
+      internalID: 5135579682243959759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c6728719802d740800000000000000
+      internalID: 5175208342681250824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_9
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa201411c5b62d490800000000000000
+      internalID: -7722992367816342865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab89588b236020ca0800000000000000
+      internalID: -6052268134318630726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_11
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174e96079d22f9c50800000000000000
+      internalID: 6674091490075599985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa5df315f74f92d0800000000000000
+      internalID: -3269815686519760143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e78c3b129ed20c0800000000000000
+      internalID: -4598763313515954608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5490dc328a8b9c0800000000000000
+      internalID: -3911191404654017106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e819dfbab56724b0800000000000000
+      internalID: -5465287770033809179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1987336c6dc524de0800000000000000
+      internalID: -1350414860739708783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_17
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 960
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2700af8a04a7fa0b0800000000000000
+      internalID: -5715214983978418062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782f9b58e9eec6b30800000000000000
+      internalID: 4282059710338298503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3e42380fbcfa4f0800000000000000
+      internalID: -815208773677947986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b91132ad5fb8b70800000000000000
+      internalID: 8902479405667949421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_21
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7a5239c2bf83290800000000000000
+      internalID: -7910296576610424875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_22
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a45df9fcb3dfc90800000000000000
+      internalID: -7134480471759173025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_23
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2923d4de807264a0800000000000000
+      internalID: -6601590345013450451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5120c4949300be60800000000000000
+      internalID: 7975878876758810972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc617770e31e589e0800000000000000
+      internalID: -1619640834440358197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed16c772154c9b4f0800000000000000
+      internalID: -812402404929805858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_27
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c54ceed799c3500800000000000000
+      internalID: 377345234948086809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_28
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2c4da1fee4cbbf0800000000000000
+      internalID: -307283885713734916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_29
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a983dc83b24cc0e0800000000000000
+      internalID: -2248348775035467354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc57e8f9bdec79b0800000000000000
+      internalID: -5080924896580117262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_31
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4b5a5c7758ab040800000000000000
+      internalID: 4664187113559143638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_32
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca584302e826f000800000000000000
+      internalID: 69287795453614790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_33
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d36cb40d76da810800000000000000
+      internalID: 1778191572203355504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_34
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80814cde729af1980800000000000000
+      internalID: -8565941977277523960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_gui-buttons-flat-set-color-yellow-and-border-color-brown_8068598_35
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f005d5a8bb6b4e540800000000000000
+      internalID: 5036351199903567887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
