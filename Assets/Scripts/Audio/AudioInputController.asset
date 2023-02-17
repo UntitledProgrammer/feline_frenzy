@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f16a8406b8b9ffe46b60ab57edf78815, type: 3}
-  m_Name: SceneInfo
-  m_EditorClassIdentifier: 
-  sceneName: Tom_Proto
-  unlocked: 1
-  record: 0
-  limit: 0
+  m_Script: {fileID: 0}
+  m_Name: AudioInputController
+  m_EditorClassIdentifier: Assembly-CSharp:FelineFrenzy.Audio:AudioInputController
+  audibles: []
+  overridable: 0
