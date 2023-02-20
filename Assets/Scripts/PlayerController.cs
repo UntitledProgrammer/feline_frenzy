@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             jumpStamina -= Time.deltaTime;
         }
 
-        else if (Input.GetKeyUp(KeyCode.Space) && !isGrounded) { jumpStamina = 0.0f; m_rigidbody.velocity *= new Vector2(1.0f, 0.5f); }
+        else if (Input.GetKeyUp(KeyCode.Space) && !isGrounded) { jumpStamina = 0.0f; m_rigidbody.velocity *= new Vector2(1.0f, 0.25f); }
         
         //Horizontal movement.
         m_rigidbody.AddForce(Vector2.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
