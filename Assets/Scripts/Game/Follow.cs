@@ -11,7 +11,7 @@ public class Follow : MonoBehaviour
     //Methods:
     private void Awake()
     {
-        target = FindObjectOfType<PlayerController>().transform;
+        target = FindObjectOfType<Issue.PlayerController>().transform;
         if (target == null) { Debug.LogError("Player could not be located."); Destroy(this); }
     }
 
@@ -38,7 +38,7 @@ public class FollowEditor : UnityEditor.Editor
     private void OnEnable()
     {
         self = (Follow)target;
-        if(self.target == null) self.target = FindObjectOfType<PlayerController>().transform;
+        if(self.target == null) self.target = FindObjectOfType<Issue.PlayerController>().transform;
     }
 
     public override void OnInspectorGUI()

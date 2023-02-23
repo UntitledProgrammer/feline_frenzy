@@ -56,7 +56,7 @@ namespace FelineFrenzy.Core
         private void Awake()
         {
             singleton = this;
-            playerTransform = FindObjectOfType<PlayerController>().transform;
+            playerTransform = FindObjectOfType<Issue.PlayerController>().transform;
 
             if (playerTransform == null) Application.Quit();
             current = LoadNextChunk();
@@ -101,7 +101,7 @@ namespace FelineFrenzy.Core
             current = LoadNextChunk();
         }
 
-        public void OnPlayerExit(PlayerController controller)
+        public void OnPlayerExit(Issue.PlayerController controller)
         {
             /*
             //If the player has reached the max attempts permitted, return to the main menu.

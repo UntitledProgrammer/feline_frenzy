@@ -8,14 +8,14 @@ namespace FelineFrenzy.Game
     public class Boundary : MonoBehaviour
     {
         //Attributes:
-        private PlayerController player;
+        private Issue.PlayerController player;
 
         //Methods:
-        private void Start() => player = FindObjectOfType<PlayerController>();
+        private void Start() => player = FindObjectOfType<Issue.PlayerController>();
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.TryGetComponent<PlayerController>(out PlayerController player))
+            if(collision.TryGetComponent<Issue.PlayerController>(out Issue.PlayerController player))
             {
                 Core.GameManager.Singleton.OnPlayerExit(player);
             }
