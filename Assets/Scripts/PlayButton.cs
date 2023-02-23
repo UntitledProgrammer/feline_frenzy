@@ -10,6 +10,8 @@ public class PlayButton : MonoBehaviour
     public GameObject storyModeButton;
     public GameObject survivalModeButton;
 
+    public Animator playButtonController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +26,15 @@ public class PlayButton : MonoBehaviour
 
     public void ButtonChange()
     {
+        playButtonController.SetTrigger("PressedButton");
+        //playButtonController.Play("PressedButton");
+        //playButton.SetActive(false);
+    }
+
+    public void TurnOnButtons()
+    {
         storyModeButton.SetActive(true);
         survivalModeButton.SetActive(true);
-        playButton.SetActive(false);
     }
 
     public void StoryModeButton()

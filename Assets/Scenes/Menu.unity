@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 8786395}
   - component: {fileID: 8786394}
   - component: {fileID: 8786398}
+  - component: {fileID: 8786399}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -244,6 +245,26 @@ MonoBehaviour:
   playButton: {fileID: 1509324760}
   storyModeButton: {fileID: 856861708}
   survivalModeButton: {fileID: 1114698140}
+  playButtonController: {fileID: 8786399}
+--- !u!95 &8786399
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786393}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ab27e29f03cdff43b474481c25214cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &249155702
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +985,7 @@ GameObject:
   - component: {fileID: 890936567}
   - component: {fileID: 890936569}
   - component: {fileID: 890936568}
+  - component: {fileID: 890936570}
   m_Layer: 5
   m_Name: Subtitle
   m_TagString: Untagged
@@ -1087,6 +1109,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890936566}
   m_CullTransparentMesh: 0
+--- !u!95 &890936570
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890936566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ab27e29f03cdff43b474481c25214cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &940781780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1937,7 @@ RectTransform:
   m_GameObject: {fileID: 1509324760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 4.093468, y: 4.093468, z: 4.093468}
   m_Children:
   - {fileID: 249155703}
   m_Father: {fileID: 8786397}
@@ -2045,8 +2086,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697489435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 259.70056, y: 121.175026, z: -697.52167}
-  m_LocalScale: {x: 1.3845986, y: 1.3845986, z: 1.3845986}
+  m_LocalPosition: {x: 210.41, y: 13.306, z: -71.169}
+  m_LocalScale: {x: 0.1412706, y: 0.1412706, z: 0.1412706}
   m_Children:
   - {fileID: 856861709}
   - {fileID: 1114698141}
