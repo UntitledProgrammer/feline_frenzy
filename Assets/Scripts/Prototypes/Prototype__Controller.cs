@@ -8,7 +8,7 @@ using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 #endif
 
-namespace Feline.Frenzy
+namespace Feline.Frenzy.Prototypes
 {
     [System.Serializable]
     public struct Stamina
@@ -41,7 +41,7 @@ namespace Feline.Frenzy
     }
 
     [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
-    public class Prototype__Controller2D : MonoBehaviour
+    public class Prototype__Controller : MonoBehaviour
     {
         //Attributes:
         private Rigidbody2D uRigidbody;
@@ -93,7 +93,7 @@ namespace Feline.Frenzy
 
         private void Air()
         {
-            if()
+            //if()
         }
     }
 }
