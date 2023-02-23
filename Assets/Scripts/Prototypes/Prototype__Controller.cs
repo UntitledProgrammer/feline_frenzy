@@ -38,6 +38,11 @@ namespace Feline.Frenzy.Prototypes
 
             return true;
         }
+        public void Add(float addition)
+        {
+            currentValue += addition;
+            if (currentValue > addition) currentValue = maximumValue;
+        }
     }
 
     [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
@@ -53,14 +58,18 @@ namespace Feline.Frenzy.Prototypes
         public Stamina stamina;
 
         [Header("Jump")]
+        public Vector2 bounds;
         public float jumpForce;
         public float jumpRaycast;
+        public float jumpCost;
 
         [Header("Dash")]
         public float dashDistance;
+        public float dashCost;
 
         [Header("Slide")]
         public float slideVelocity;
+        public float slideCost;
 
         [Header("Input")]
         public KeyCode jumpKey;
@@ -68,8 +77,9 @@ namespace Feline.Frenzy.Prototypes
         public KeyCode slideKey;
 
         //Properties:
-        public bool IsGrounded { get => Physics2D.Raycast(transform.position, -transform.up, jumpRaycast).collider; }
+        public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, jumpRaycast).collider; }
         public float Velocity { get => IsGrounded ? groundedVelocity : airVelocity; }
+
 
         //Methods:
         private void Awake()
@@ -77,23 +87,53 @@ namespace Feline.Frenzy.Prototypes
             //Initialise components.
             uAnimator = GetComponent<Animator>();
             uRigidbody = GetComponent<Rigidbody2D>();
+            stamina.Reset();
         }
         private void Update()
         {
             //Horizontal movement.
             uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Force);
+
+            if (IsGrounded) Grounded();
+            else Air();
         }
 
         private void OnDrawGizmos()
         {
-            //Jump:
+            //Draw raycast that checks whether a player is grounded.
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + -transform.up * jumpRaycast);
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * jumpRaycast);
+            Gizmos.DrawWireCube(transform.position + Vector3.down * jumpRaycast, bounds);
         }
 
         private void Air()
         {
-            //if()
+            //Continue to jump
+            if (Input.GetKey(jumpKey) && stamina.Subtract(jumpCost))
+            {
+                uRigidbody.AddForce(transform.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
+            }
+
+            //Dash.
+            else if (Input.GetKeyDown(dashKey))
+            {
+                Debug.Log("Dash");
+            }    
+
+        }
+
+        private void Grounded()
+        {
+            stamina.Add(Time.deltaTime);
+
+            //Jump.
+            if(Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
+            {
+                uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            }
+
+            //Slide.
+            else if(Input.GetKeyDown(slideKey)) { Debug.Log("Dash"); }
         }
     }
 }
