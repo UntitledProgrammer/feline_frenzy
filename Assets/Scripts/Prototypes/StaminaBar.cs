@@ -1,10 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 namespace FelineFrenzy.UI
 {
     /**
@@ -13,7 +9,7 @@ namespace FelineFrenzy.UI
      *  @project Feline Frenzy.
      *  @author Thomas Jacobs.
      */
-    [System.Serializable] public class Stamina : Object
+    [System.Serializable] public struct Stamina 
     {
         //Attributes:
         private float currentValue;
@@ -27,13 +23,39 @@ namespace FelineFrenzy.UI
         }
 
         //Properties:
+
+        /**
+         *  The level of stamina present.
+         *  
+         *  @returns A float representing the level of stamina present in structure.
+         */
         public float Value { get => currentValue; }
+
+        /**
+         *  The maximum possible stamina value.
+         *  The stamina will automatically be capped to the maximum value.
+         * 
+         *  @returns Float representing the maximum possible stamina value.
+         */
         public float MaximumValue { get => maximumValue; }
 
         //Methods:
+
+        /**
+         *  The result of dividing the current stamina value by the maximum possible stamina value.
+         * 
+         *  @returns Float representing the percentage of stamina left in the form of a decimal value.
+         */
         public float Decimal { get => currentValue / maximumValue; }
 
         public void Reset() => currentValue = maximumValue;
+
+        /**
+         *  Subtracts stamina by the value specified if enough stamina is present.
+         * 
+         *  @param 'substitution' : The value to be substituted from the present stamina value.
+         *  @returns False if not enough stamina is available to complete substitution, True if substitution was successful.
+         */
         public bool Subtract(float substitution)
         {
             if (substitution > currentValue) return false;
@@ -42,6 +64,7 @@ namespace FelineFrenzy.UI
 
             return true;
         }
+
         public void Add(float addition)
         {
             currentValue += addition;
@@ -49,44 +72,30 @@ namespace FelineFrenzy.UI
         }
     }
 
-
-    [RequireComponent(typeof(Image))]
-    public class StaminaBar : Image
+    /**
+     *  A simple class for displaying a players stamina by manipulating a 'Slider' component.
+     *  
+     *  @owner Thomas Jacobs.
+     *  @project Feline Frenzy.
+     */
+    [RequireComponent(typeof(Slider))] public class StaminaBar : MonoBehaviour
     {
         //Attributes:
         public Prototypes.Prototype__Controller target;
+        private Slider slider;
+        private const float minimum = 0.0f;
+        private const float maximum = 1.0f;
 
         //Methods:
-        protected override void Awake()
+        private void Awake() => slider = GetComponent<Slider>();
+
+        protected void Update()
         {
-            base.Awake();
-            sprite = default;
-            this.type = Type.Filled;
-            this.fillMethod = FillMethod.Horizontal;
+            if (slider == null || target == null) return;
+
+            slider.maxValue = maximum;
+            slider.minValue = minimum;
+            slider.value = target.stamina.Decimal;
         }
     }
-
-#if UNITY_EDITOR
-    [CustomEditor(typeof(StaminaBar))]
-    public class EStaminaBar : Editor
-    {
-        //Attributes:
-        private StaminaBar self;
-
-        //Methods:
-        private void OnEnable() => self = (StaminaBar)target;
-
-        public override void OnInspectorGUI()
-        {
-            self.target = (Prototypes.Prototype__Controller)EditorGUILayout.ObjectField("Target", self.target, typeof(Prototypes.Prototype__Controller), true);
-            self.sprite = (Sprite)EditorGUILayout.ObjectField("Sprite", self.sprite, typeof(Sprite), true);
-            self.color = EditorGUILayout.ColorField("Colour", self.color);
-
-            serializedObject.Update();
-
-            if (self.target) self.fillAmount = self.target.stamina.Decimal;
-        }
-    }
-
-#endif
 }
