@@ -8,43 +8,8 @@ using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 #endif
 
-namespace Feline.Frenzy.Prototypes
+namespace FelineFrenzy.Prototypes
 {
-    [System.Serializable]
-    public struct Stamina
-    {
-        //Attributes:
-        private float currentValue;
-        [SerializeField] private float maximumValue;
-
-        //Constructor:
-        public Stamina(float maximumValue)
-        {
-            this.maximumValue = maximumValue;
-            currentValue = maximumValue;
-        }
-
-        //Properties:
-        public float Value { get => currentValue; }
-        public float MaximumValue { get => maximumValue; }
-
-        //Methods:
-        public void Reset() => currentValue = maximumValue;
-        public bool Subtract(float substitution)
-        {
-            if (substitution > currentValue) return false;
-
-            currentValue -= substitution;
-
-            return true;
-        }
-        public void Add(float addition)
-        {
-            currentValue += addition;
-            if (currentValue > addition) currentValue = maximumValue;
-        }
-    }
-
     [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
     public class Prototype__Controller : MonoBehaviour
     {
@@ -55,7 +20,7 @@ namespace Feline.Frenzy.Prototypes
         [Header("Attributes")]
         public float groundedVelocity;
         public float airVelocity;
-        public Stamina stamina;
+        public UI.Stamina stamina;
 
         [Header("Jump")]
         public Vector2 bounds;
@@ -64,7 +29,7 @@ namespace Feline.Frenzy.Prototypes
         public float jumpCost;
 
         [Header("Dash")]
-        public float dashDistance;
+        public float dashVelocity;
         public float dashCost;
 
         [Header("Slide")]
@@ -89,12 +54,13 @@ namespace Feline.Frenzy.Prototypes
             uRigidbody = GetComponent<Rigidbody2D>();
             stamina.Reset();
         }
+
         private void Update()
         {
             //Horizontal movement.
-            uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Force);
+            uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
 
-            if (IsGrounded) Grounded();
+            if (IsGrounded) { stamina.Add(Time.deltaTime); Grounded(); }
             else Air();
         }
 
@@ -118,14 +84,12 @@ namespace Feline.Frenzy.Prototypes
             else if (Input.GetKeyDown(dashKey))
             {
                 Debug.Log("Dash");
+                StartCoroutine(Dash(1.0f, dashVelocity));
             }    
-
         }
 
         private void Grounded()
         {
-            stamina.Add(Time.deltaTime);
-
             //Jump.
             if(Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
             {
@@ -134,6 +98,14 @@ namespace Feline.Frenzy.Prototypes
 
             //Slide.
             else if(Input.GetKeyDown(slideKey)) { Debug.Log("Dash"); }
+        }
+
+        private IEnumerator Dash(float delay, float speed)
+        {
+            float temp = airVelocity;
+            airVelocity = speed;
+            yield return new WaitForSecondsRealtime(delay);
+            airVelocity = temp;
         }
     }
 }
