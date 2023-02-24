@@ -16,6 +16,7 @@ namespace FelineFrenzy.Prototypes
         //Attributes:
         private Rigidbody2D uRigidbody;
         private Animator uAnimator;
+        private const string verticalString = "vertical", jumpString = "jump";
 
         [Header("Attributes")]
         public float groundedVelocity;
@@ -57,6 +58,10 @@ namespace FelineFrenzy.Prototypes
 
         private void Update()
         {
+            //Animation.
+            uAnimator.SetFloat(verticalString, uRigidbody.velocity.y);
+            uAnimator.SetBool(jumpString, IsGrounded);
+
             //Horizontal movement.
             uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
 
