@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -58,6 +59,9 @@ namespace FelineFrenzy.Prototypes
 
         private void Update()
         {
+            Debug.Log(stamina.Decimal);
+            //stamina.Add(Time.deltaTime);
+
             //Animation.
             uAnimator.SetFloat(verticalString, uRigidbody.velocity.y);
             uAnimator.SetBool(jumpString, IsGrounded);
@@ -65,28 +69,14 @@ namespace FelineFrenzy.Prototypes
             //Horizontal movement.
             uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
 
-            if (IsGrounded) { stamina.Add(Time.deltaTime); Grounded(); }
+            if (IsGrounded) { Grounded(); }
             else Air();
-        }
-
-        private void OnDrawGizmos()
-        {
-            //Draw raycast that checks whether a player is grounded.
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * jumpRaycast);
-            Gizmos.DrawWireCube(transform.position + Vector3.down * jumpRaycast, bounds);
         }
 
         private void Air()
         {
-            //Continue to jump
-            if (Input.GetKey(jumpKey) && stamina.Subtract(jumpCost))
-            {
-                uRigidbody.AddForce(transform.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
-            }
-
             //Dash.
-            else if (Input.GetKeyDown(dashKey))
+            if (Input.GetKeyDown(dashKey) && stamina.Subtract(dashCost))
             {
                 Debug.Log("Dash");
                 StartCoroutine(Dash(1.0f, dashVelocity));
@@ -102,15 +92,25 @@ namespace FelineFrenzy.Prototypes
             }
 
             //Slide.
-            else if(Input.GetKeyDown(slideKey)) { Debug.Log("Dash"); }
+            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) { Debug.Log("Slide"); StartCoroutine(Dash(0.25f, slideVelocity)); }
         }
 
         private IEnumerator Dash(float delay, float speed)
         {
             float temp = airVelocity;
             airVelocity = speed;
+            uRigidbody.velocity = Velocity * Time.deltaTime * transform.right;
             yield return new WaitForSecondsRealtime(delay);
             airVelocity = temp;
+        }
+
+        //For development only.
+        private void OnDrawGizmos()
+        {
+            //Draw raycast that checks whether a player is grounded.
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * jumpRaycast);
+            Gizmos.DrawWireCube(transform.position + Vector3.down * jumpRaycast, bounds);
         }
     }
 }

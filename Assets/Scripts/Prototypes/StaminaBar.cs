@@ -13,6 +13,7 @@ namespace FelineFrenzy.UI
     {
         //Attributes:
         private float currentValue;
+        private const float EMPTY = 0.0f;
         [SerializeField] private float maximumValue;
 
         //Constructor:
@@ -58,7 +59,7 @@ namespace FelineFrenzy.UI
          */
         public bool Subtract(float substitution)
         {
-            if (substitution > currentValue) return false;
+            if (currentValue - substitution < EMPTY) return false;
 
             currentValue -= substitution;
 
@@ -89,7 +90,7 @@ namespace FelineFrenzy.UI
         //Methods:
         private void Awake() => slider = GetComponent<Slider>();
 
-        protected void Update()
+        protected void LateUpdate()
         {
             if (slider == null || target == null) return;
 

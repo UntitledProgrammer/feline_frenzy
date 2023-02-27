@@ -9,13 +9,19 @@ public class ChangeSounds : MonoBehaviour
     public Sprite SoundOffImage;
     public Button button;
     private bool isOn = true;
+    private AudioListener listener;
 
     public AudioSource backgroundMusicSource;
     public AudioSource buttonSource;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        listener = GameObject.FindObjectOfType<AudioListener>();
+        if (listener == null)
+        {
+            listener = new GameObject("listener").AddComponent<AudioListener>();
+        }
         SoundOnImage = button.image.sprite;   
     }
 
@@ -33,6 +39,7 @@ public void ButtonClicked()
             isOn = false;
             backgroundMusicSource.mute = true;
             buttonSource.mute = true;
+            listener.enabled = false;
         }
         else
         {
@@ -40,6 +47,7 @@ public void ButtonClicked()
             isOn = true;
             backgroundMusicSource.mute = false;
             buttonSource.mute = false;
+            listener.enabled = true;
         }
     }
 }
