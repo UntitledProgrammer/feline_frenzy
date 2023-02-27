@@ -37,7 +37,7 @@ namespace FelineFrenzy.Audio
         {
             AudioSource temp = singleton.gameObject.AddComponent<AudioSource>();
             temp.PlayOneShot(clip);
-
+            
             Destroy(temp, clip.length);
         }
     }
