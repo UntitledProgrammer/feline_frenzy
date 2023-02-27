@@ -18,12 +18,12 @@ public class Follow : MonoBehaviour
     public void Update()
     {
         if (target == null) { Debug.LogError("Player could not be located."); Destroy(this); }
-        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z) + (Vector3)offset;
+        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z) + (Vector3)offset;
     }
 
     public void Centre()
     {
-        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z) + (Vector3)offset;
+        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z) + (Vector3)offset;
     }
 }
 
