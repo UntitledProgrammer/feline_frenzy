@@ -18,6 +18,7 @@ namespace FelineFrenzy.Prototypes
         private Rigidbody2D uRigidbody;
         private Animator uAnimator;
         private const string verticalString = "vertical", jumpString = "jump";
+        private const string jumpAnim = "JUMP", slideAnim = "SLIDE", dashAnim = "DASH", groundedAnim = "GROUNDED";
 
         [Header("Attributes")]
         public float groundedVelocity;
@@ -61,11 +62,11 @@ namespace FelineFrenzy.Prototypes
 
         private void Update()
         {
-            stamina.Add(staminaRecovery);
+            //Recover stamina.
+            stamina.Add(staminaRecovery * Time.deltaTime);
 
             //Animation.
-            uAnimator.SetFloat(verticalString, uRigidbody.velocity.y);
-            uAnimator.SetBool(jumpString, IsGrounded);
+            uAnimator.SetBool(groundedAnim, IsGrounded);
 
             //Horizontal movement.
             uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
@@ -80,7 +81,7 @@ namespace FelineFrenzy.Prototypes
             //Dash.
             if (Input.GetKeyDown(dashKey) && stamina.Subtract(dashCost))
             {
-                Debug.Log("Dash");
+                uAnimator.SetTrigger(dashAnim);
                 StartCoroutine(Dash(dashTime, dashVelocity));
             }    
         }
@@ -90,11 +91,12 @@ namespace FelineFrenzy.Prototypes
             //Jump.
             if(Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
             {
+                uAnimator.SetTrigger(jumpAnim);
                 uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             }
 
             //Slide.
-            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) { Debug.Log("Slide"); StartCoroutine(Dash(slideTime, slideVelocity)); }
+            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) { uAnimator.SetTrigger(slideAnim); StartCoroutine(Dash(slideTime, slideVelocity)); }
         }
 
         private IEnumerator Dash(float delay, float speed)
