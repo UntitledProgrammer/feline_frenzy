@@ -345,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundedVelocity: 20
   airVelocity: 10
+  staminaRecovery: 0
   stamina:
     maximumValue: 100
   bounds: {x: 0.33, y: 0.03}
@@ -353,8 +354,10 @@ MonoBehaviour:
   jumpCost: 10
   dashVelocity: 200
   dashCost: 40
-  slideVelocity: 0
+  dashTime: 0.25
+  slideVelocity: 200
   slideCost: 0
+  slideTime: 0.25
   jumpKey: 32
   dashKey: 119
   slideKey: 0

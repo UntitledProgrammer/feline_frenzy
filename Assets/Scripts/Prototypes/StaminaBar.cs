@@ -69,7 +69,7 @@ namespace FelineFrenzy.UI
         public void Add(float addition)
         {
             currentValue += addition;
-            if (currentValue > addition) currentValue = maximumValue;
+            if (currentValue > maximumValue) currentValue = maximumValue;
         }
     }
 

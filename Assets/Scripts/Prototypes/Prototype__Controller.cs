@@ -22,6 +22,7 @@ namespace FelineFrenzy.Prototypes
         [Header("Attributes")]
         public float groundedVelocity;
         public float airVelocity;
+        public float staminaRecovery;
         public UI.Stamina stamina;
 
         [Header("Jump")]
@@ -33,10 +34,12 @@ namespace FelineFrenzy.Prototypes
         [Header("Dash")]
         public float dashVelocity;
         public float dashCost;
+        public float dashTime;
 
         [Header("Slide")]
         public float slideVelocity;
         public float slideCost;
+        public float slideTime;
 
         [Header("Input")]
         public KeyCode jumpKey;
@@ -46,7 +49,6 @@ namespace FelineFrenzy.Prototypes
         //Properties:
         public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, jumpRaycast).collider; }
         public float Velocity { get => IsGrounded ? groundedVelocity : airVelocity; }
-
 
         //Methods:
         private void Awake()
@@ -59,8 +61,7 @@ namespace FelineFrenzy.Prototypes
 
         private void Update()
         {
-            Debug.Log(stamina.Decimal);
-            //stamina.Add(Time.deltaTime);
+            stamina.Add(staminaRecovery);
 
             //Animation.
             uAnimator.SetFloat(verticalString, uRigidbody.velocity.y);
@@ -69,6 +70,7 @@ namespace FelineFrenzy.Prototypes
             //Horizontal movement.
             uRigidbody.AddForce(uRigidbody.transform.right * Velocity * Time.deltaTime, ForceMode2D.Impulse);
 
+            //State logic.
             if (IsGrounded) { Grounded(); }
             else Air();
         }
@@ -79,7 +81,7 @@ namespace FelineFrenzy.Prototypes
             if (Input.GetKeyDown(dashKey) && stamina.Subtract(dashCost))
             {
                 Debug.Log("Dash");
-                StartCoroutine(Dash(1.0f, dashVelocity));
+                StartCoroutine(Dash(dashTime, dashVelocity));
             }    
         }
 
@@ -92,7 +94,7 @@ namespace FelineFrenzy.Prototypes
             }
 
             //Slide.
-            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) { Debug.Log("Slide"); StartCoroutine(Dash(0.25f, slideVelocity)); }
+            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) { Debug.Log("Slide"); StartCoroutine(Dash(slideTime, slideVelocity)); }
         }
 
         private IEnumerator Dash(float delay, float speed)
