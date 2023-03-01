@@ -25,7 +25,7 @@ namespace FelineFrenzy.Core
         public Vector2 spawnPoint;
         public List<Collection> chunks = new List<Collection>();
         private Collection previous, current;
-        private Transform playerTransform;
+        [SerializeField] private Transform playerTransform;
         private const float tolerance = 4.0f;
         private const float delay = 2.0f;
 
@@ -56,7 +56,7 @@ namespace FelineFrenzy.Core
         private void Awake()
         {
             singleton = this;
-            playerTransform = FindObjectOfType<Issue.PlayerController>().transform;
+            //playerTransform = FindObjectOfType<Issue.PlayerController>().transform;
 
             if (playerTransform == null) Application.Quit();
             current = LoadNextChunk();
