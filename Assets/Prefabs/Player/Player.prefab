@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6323811568531929881}
   m_Layer: 2
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +81,9 @@ MonoBehaviour:
   jumpKey: 32
   dashKey: 119
   slideKey: 115
+  jumpSoundEffect: {fileID: 0}
+  slideSoundEffect: {fileID: 0}
+  dashSoundEffect: {fileID: 0}
 --- !u!212 &6323811568531929878
 SpriteRenderer:
   m_ObjectHideFlags: 0

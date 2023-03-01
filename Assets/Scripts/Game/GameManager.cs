@@ -115,6 +115,13 @@ namespace FelineFrenzy.Core
             playerTransform.position = current.SpawnPoint;
         }
 
+        public void RespawnPlayer()
+        {
+            if (playerTransform == null) return;
+
+            playerTransform.position = current.SpawnPoint;
+        }
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.cyan;
