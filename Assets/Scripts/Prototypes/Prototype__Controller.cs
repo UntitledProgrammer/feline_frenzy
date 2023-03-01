@@ -11,12 +11,13 @@ using UnityEngine.UIElements;
 
 namespace FelineFrenzy.Prototypes
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(AudioSource))]
     public class Prototype__Controller : MonoBehaviour
     {
         //Attributes:
         private Rigidbody2D uRigidbody;
         private Animator uAnimator;
+        private AudioSource uAudioSource;
         private const string verticalString = "vertical", jumpString = "jump";
         private const string jumpAnim = "JUMP", slideAnim = "SLIDE", dashAnim = "DASH", groundedAnim = "GROUNDED";
 
@@ -47,6 +48,11 @@ namespace FelineFrenzy.Prototypes
         public KeyCode dashKey;
         public KeyCode slideKey;
 
+        [Header("Sound Effects")]
+        public AudioClip jumpSoundEffect;
+        public AudioClip slideSoundEffect;
+        public AudioClip dashSoundEffect;
+
         //Properties:
         public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, jumpRaycast).collider; }
         public float Velocity { get => IsGrounded ? groundedVelocity : airVelocity; }
@@ -57,6 +63,7 @@ namespace FelineFrenzy.Prototypes
             //Initialise components.
             uAnimator = GetComponent<Animator>();
             uRigidbody = GetComponent<Rigidbody2D>();
+            uAudioSource = GetComponent<AudioSource>();
             stamina.Reset();
         }
 
@@ -82,6 +89,7 @@ namespace FelineFrenzy.Prototypes
             if (Input.GetKeyDown(dashKey) && stamina.Subtract(dashCost))
             {
                 uAnimator.SetTrigger(dashAnim);
+                uAudioSource.PlayOneShot(dashSoundEffect);
                 StartCoroutine(Dash(dashTime, dashVelocity));
             }    
         }
@@ -93,10 +101,16 @@ namespace FelineFrenzy.Prototypes
             {
                 uAnimator.SetTrigger(jumpAnim);
                 uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                uAudioSource.PlayOneShot(jumpSoundEffect);
             }
 
             //Slide.
-            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) { uAnimator.SetTrigger(slideAnim); StartCoroutine(Dash(slideTime, slideVelocity)); }
+            else if(Input.GetKeyDown(slideKey) && stamina.Subtract(slideCost)) 
+            { 
+                uAnimator.SetTrigger(slideAnim); 
+                StartCoroutine(Dash(slideTime, slideVelocity)); 
+                uAudioSource.PlayOneShot(slideSoundEffect); 
+            }
         }
 
         private IEnumerator Dash(float delay, float speed)
