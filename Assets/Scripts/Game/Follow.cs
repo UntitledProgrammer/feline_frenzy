@@ -21,7 +21,7 @@ public class Follow : MonoBehaviour
     private const float TOLERANCE = 0.1f;
 
     //Methods:
-    private static Vector3 EraseDepth(Vector2 vector) => new Vector3(vector.x, vector.y, default);
+    private Vector3 EraseDepth(Vector2 vector) => new Vector3(vector.x * axis.x, vector.y * axis.y, default);
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class Follow : MonoBehaviour
     {
         if (target == null || Vector2.Distance(transform.position, target.position) <= TOLERANCE) return;
 
-        transform.position += speed * Time.deltaTime * EraseDepth((target.transform.position - transform.position).normalized);
+        transform.position += speed * Time.deltaTime * (EraseDepth((target.transform.position - transform.position).normalized));
     }
 
     public void Centre()
