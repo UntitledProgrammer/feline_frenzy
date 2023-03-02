@@ -40,9 +40,12 @@ public class SideScroller : MonoBehaviour
     }
     private void Jump()
     {
-        rb2d.velocity = new Vector2(rb2d.velocity.x, Speed);
-        anim.SetTrigger("Jump");
-        grounded = false;
+        if (grounded = true){
+            rb2d.velocity = new Vector2(rb2d.velocity.x, Speed);
+            anim.SetTrigger("Jump");
+            grounded = false;
+        }
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
