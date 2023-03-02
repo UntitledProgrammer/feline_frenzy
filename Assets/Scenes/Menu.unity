@@ -2569,7 +2569,7 @@ MonoBehaviour:
   width: 162.61
   height: 327.8
   offset: {x: 0, y: 0}
-  soundEffect: {fileID: 8300000, guid: d4621b705426f574fa8a35beebb03386, type: 3}
+  soundEffect: {fileID: 8300000, guid: a6d677e02dcdfb543a0e04d702f7a301, type: 3}
 --- !u!82 &2029316796
 AudioSource:
   m_ObjectHideFlags: 0
