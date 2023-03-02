@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -12,7 +13,7 @@ using UnityEngine.UIElements;
 namespace FelineFrenzy.Prototypes
 {
     [RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(AudioSource))]
-    public class Prototype__Controller : MonoBehaviour
+    public class Prototype__Controller : Game.Respawnable
     {
         //Attributes:
         private Rigidbody2D uRigidbody;
@@ -52,6 +53,9 @@ namespace FelineFrenzy.Prototypes
         public AudioClip jumpSoundEffect;
         public AudioClip slideSoundEffect;
         public AudioClip dashSoundEffect;
+
+        [Header("OnDestroy")]
+        public UnityEvent onRespawn;
 
         //Properties:
         public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, jumpRaycast).collider; }
@@ -121,6 +125,8 @@ namespace FelineFrenzy.Prototypes
             yield return new WaitForSecondsRealtime(delay);
             airVelocity = temp;
         }
+
+        public override void Respawn() => onRespawn.Invoke();
 
         //For development only.
         private void OnDrawGizmos()

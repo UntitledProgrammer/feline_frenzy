@@ -11,6 +11,7 @@ namespace FelineFrenzy.Core
         //Attributes:
         [SerializeField] private UnityEditor.SceneAsset mainMenu;
         [SerializeField] private TMPro.TextMeshProUGUI textBox;
+        [SerializeField] private TMPro.TextMeshProUGUI attemptsBox;
         private float currentTime;
         private uint currentAttempts;
         private const uint maxAttempts = 3;
@@ -40,6 +41,7 @@ namespace FelineFrenzy.Core
 
             //Restart the timer for the next attempt.
             currentTime = default;
+            if (attemptsBox != null) attemptsBox.text = currentAttempts.ToString();
         }
     }
 }
