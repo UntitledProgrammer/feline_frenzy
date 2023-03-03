@@ -436,7 +436,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 3
-    height: 3
+    height: 3.24
 --- !u!222 &599453790
 CanvasRenderer:
   m_ObjectHideFlags: 0
