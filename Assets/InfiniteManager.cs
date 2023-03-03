@@ -9,6 +9,7 @@ namespace FelineFrenzy.Core
     public class InfiniteManager : MonoBehaviour
     {
         //Attributes:
+        public UnityEngine.Events.UnityEvent onFail;
         [SerializeField] private UnityEditor.SceneAsset mainMenu;
         [SerializeField] private TMPro.TextMeshProUGUI textBox;
         [SerializeField] private TMPro.TextMeshProUGUI attemptsBox;
@@ -34,13 +35,14 @@ namespace FelineFrenzy.Core
             //If player has used the maximum number of attempts, return to the main menu.
             if(++currentAttempts > maxAttempts)
             {
-                if (mainMenu == null) { Debug.LogError("InfiniteManager: Main Menu was null.");  Application.Quit(); }
-                UnityEngine.SceneManagement.SceneManager.LoadScene(mainMenu.name);
+                //if (mainMenu == null) { Debug.LogError("InfiniteManager: Main Menu was null.");  Application.Quit(); }
+
+                onFail.Invoke();
+
                 return;
             }
 
             //Restart the timer for the next attempt.
-            currentTime = default;
             if (attemptsBox != null) attemptsBox.text = currentAttempts.ToString();
         }
     }
