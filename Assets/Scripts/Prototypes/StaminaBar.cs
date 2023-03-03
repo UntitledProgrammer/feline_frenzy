@@ -50,6 +50,7 @@ namespace FelineFrenzy.UI
         public float Decimal { get => currentValue / maximumValue; }
 
         public void Reset() => currentValue = maximumValue;
+        public void Empty() => currentValue = default;
 
         /**
          *  Subtracts stamina by the value specified if enough stamina is present.

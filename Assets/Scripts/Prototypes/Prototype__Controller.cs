@@ -73,9 +73,6 @@ namespace FelineFrenzy.Prototypes
 
         private void Update()
         {
-            //Recover stamina.
-            stamina.Add(staminaRecovery * Time.deltaTime);
-
             //Animation.
             uAnimator.SetBool(groundedAnim, IsGrounded);
 
@@ -95,13 +92,23 @@ namespace FelineFrenzy.Prototypes
                 uAnimator.SetTrigger(dashAnim);
                 uAudioSource.PlayOneShot(dashSoundEffect);
                 StartCoroutine(Dash(dashTime, dashVelocity));
-            }    
+            }  
+            else if(Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
+            {
+                stamina.Empty();
+                uAnimator.SetTrigger(jumpAnim);
+                uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                uAudioSource.PlayOneShot(jumpSoundEffect);
+            }
         }
 
         private void Grounded()
         {
+            //Recover stamina.
+            stamina.Add(staminaRecovery * Time.deltaTime);
+
             //Jump.
-            if(Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
+            if (Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
             {
                 uAnimator.SetTrigger(jumpAnim);
                 uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -126,7 +133,7 @@ namespace FelineFrenzy.Prototypes
             airVelocity = temp;
         }
 
-        public override void Respawn() => onRespawn.Invoke();
+        public override void Respawn() { stamina.Reset(); onRespawn.Invoke(); }
 
         //For development only.
         private void OnDrawGizmos()

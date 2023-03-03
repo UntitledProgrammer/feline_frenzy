@@ -406,8 +406,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333008403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.2825, z: 3.567254}
-  m_LocalScale: {x: 0.56970435, y: 0.6383752, z: 0.667087}
+  m_LocalPosition: {x: 0.01, y: -0.32406, z: 3.567254}
+  m_LocalScale: {x: 0.6635917, y: 0.7435795, z: 0.777023}
   m_Children: []
   m_Father: {fileID: 981811260}
   m_RootOrder: 3
@@ -727,8 +727,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610131586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010000017, y: -0.1512, z: 3.567254}
-  m_LocalScale: {x: 0.4962149, y: 0.55602753, z: 0.5810356}
+  m_LocalPosition: {x: 0.010000017, y: -0.17113, z: 3.567254}
+  m_LocalScale: {x: 0.5779911, y: 0.6476609, z: 0.6767903}
   m_Children: []
   m_Father: {fileID: 981811260}
   m_RootOrder: 1
@@ -1159,7 +1159,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.74
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1183,7 +1183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981811257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7463666, y: -2.3266382, z: -6.64}
+  m_LocalPosition: {x: 1.7463666, y: -2.09, z: -6.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1839253206}
@@ -1559,6 +1559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 102900000, guid: 68bb338a38f5e7d4a8c12cff08aac9b1, type: 3}
   textBox: {fileID: 1111332339}
+  attemptsBox: {fileID: 1756109803}
 --- !u!222 &1111332341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2157,8 +2158,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742318620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010000017, y: 1.1113, z: 3.567254}
-  m_LocalScale: {x: 0.4962149, y: 0.55602753, z: 0.5810356}
+  m_LocalPosition: {x: 0.010000017, y: 1.2994, z: 3.567254}
+  m_LocalScale: {x: 0.5779911, y: 0.6476609, z: 0.6767903}
   m_Children: []
   m_Father: {fileID: 981811260}
   m_RootOrder: 2
@@ -2399,8 +2400,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839253205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010000017, y: 0.026197, z: 3.567254}
-  m_LocalScale: {x: 0.4962149, y: 0.55602753, z: 0.5810356}
+  m_LocalPosition: {x: 0.010000017, y: 0.035503, z: 3.567254}
+  m_LocalScale: {x: 0.5779911, y: 0.6476609, z: 0.6767903}
   m_Children: []
   m_Father: {fileID: 981811260}
   m_RootOrder: 0
@@ -4486,8 +4487,8 @@ MonoBehaviour:
   staminaRecovery: 12
   stamina:
     maximumValue: 100
-  bounds: {x: 0.54, y: 0.06}
-  jumpForce: 20
+  bounds: {x: 1.38, y: 0.06}
+  jumpForce: 25
   jumpRaycast: 0.65
   jumpCost: 10
   dashVelocity: 200
@@ -4502,6 +4503,31 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 8300000, guid: 128716ba994261f40af8a8dbd0e7efa4, type: 3}
   slideSoundEffect: {fileID: 8300000, guid: 05caa5e5fc6ce084e91fa5d5a8467024, type: 3}
   dashSoundEffect: {fileID: 8300000, guid: 7ad7cd38307034c4d996c86f3bcb024b, type: 3}
+  onRespawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 81102975}
+        m_MethodName: RespawnPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1111332340}
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &6323811568302391246
 Animator:
   serializedVersion: 3

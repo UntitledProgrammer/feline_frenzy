@@ -26,7 +26,7 @@ namespace FelineFrenzy.Core
         public List<Collection> chunks = new List<Collection>();
         private Collection previous, current;
         [SerializeField] private Transform playerTransform;
-        private const float tolerance = 4.0f;
+        private const float tolerance = 8.0f;
         private const float delay = 2.0f;
 
         [Header("Main Settings")]
@@ -94,7 +94,7 @@ namespace FelineFrenzy.Core
 
             //Load next chunk?
             if (previous != null && Distance(current.Left, playerTransform.position) < -1.0f) { Destroy(previous.gameObject); }
-            if (Distance(current.Right, playerTransform.position) > tolerance) return;
+            if (Distance(current.Right, playerTransform.position) > current.extent/1.5f) return;
 
             //Player has passed flag point.
             previous = current;
