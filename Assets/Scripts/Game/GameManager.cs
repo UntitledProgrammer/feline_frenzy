@@ -25,8 +25,8 @@ namespace FelineFrenzy.Core
         public Vector2 spawnPoint;
         public List<Collection> chunks = new List<Collection>();
         private Collection previous, current;
-        private Transform playerTransform;
-        private const float tolerance = 4.0f;
+        [SerializeField] private Transform playerTransform;
+        private const float tolerance = 8.0f;
         private const float delay = 2.0f;
 
         [Header("Main Settings")]
@@ -56,7 +56,7 @@ namespace FelineFrenzy.Core
         private void Awake()
         {
             singleton = this;
-            playerTransform = FindObjectOfType<Issue.PlayerController>().transform;
+            //playerTransform = FindObjectOfType<Issue.PlayerController>().transform;
 
             if (playerTransform == null) Application.Quit();
             current = LoadNextChunk();
@@ -93,8 +93,8 @@ namespace FelineFrenzy.Core
             timeActive += Time.deltaTime;
 
             //Load next chunk?
-            if (previous != null && Distance(current.Left, playerTransform.position) < -1.0f) { Destroy(previous.gameObject); }
-            if (Distance(current.Right, playerTransform.position) > tolerance) return;
+            if (previous != null && Distance(current.Left, playerTransform.position) < -4.0f) { Destroy(previous.gameObject); }
+            if (Distance(current.Right, playerTransform.position) > current.extent/1.5f) return;
 
             //Player has passed flag point.
             previous = current;
@@ -111,6 +111,13 @@ namespace FelineFrenzy.Core
             current = origin;
             origin.gameObject.SetActive(true);
             */
+
+            playerTransform.position = current.SpawnPoint;
+        }
+
+        public void RespawnPlayer()
+        {
+            if (playerTransform == null) return;
 
             playerTransform.position = current.SpawnPoint;
         }

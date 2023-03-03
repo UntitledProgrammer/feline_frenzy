@@ -2,28 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ *  A simple script for following a target transform.
+ *  The script targets a transform to make it usable for any gameObject
+ *  since all gameObjects must have a transform.
+ * 
+ *  @owner Thomas Jacobs.
+ *  @project Feline Frenzy.
+ *  @date 10/3/23.
+ */
 public class Follow : MonoBehaviour
 {
     //Attributes:
-    public Vector2 offset;
-    public Transform target;
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector2 offset;
+    [SerializeField] private Vector2 axis;
+    [SerializeField] private float speed;
+    private const float TOLERANCE = 0.1f;
 
     //Methods:
+    private Vector3 EraseDepth(Vector2 vector) => new Vector3(vector.x * axis.x, vector.y * axis.y, default);
+
     private void Awake()
     {
-        target = FindObjectOfType<Issue.PlayerController>().transform;
         if (target == null) { Debug.LogError("Player could not be located."); Destroy(this); }
     }
 
-    public void Update()
+    public void LateUpdate()
     {
-        if (target == null) { Debug.LogError("Player could not be located."); Destroy(this); }
-        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z) + (Vector3)offset;
+        if (target == null || Vector2.Distance(transform.position, target.position) <= TOLERANCE) return;
+
+        transform.position += speed * Time.deltaTime * (EraseDepth((target.transform.position - transform.position).normalized));
     }
 
     public void Centre()
     {
-        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z) + (Vector3)offset;
+        if (target == null) return;
+        transform.position = axis * target.transform.position + offset;
     }
 }
 
@@ -38,7 +53,6 @@ public class FollowEditor : UnityEditor.Editor
     private void OnEnable()
     {
         self = (Follow)target;
-        if(self.target == null) self.target = FindObjectOfType<Issue.PlayerController>().transform;
     }
 
     public override void OnInspectorGUI()

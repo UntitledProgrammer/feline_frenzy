@@ -8,6 +8,18 @@ public class MenuUtilities : MonoBehaviour
 {
     //Methods:
     public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+    public void LoadSceneAsync(string sceneName, float delay)
+    {
+        StartCoroutine(LoadSceneDelay(sceneName, delay));
+    }
+
+    public IEnumerator LoadSceneDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
     public void Quit() => Application.Quit();
 
     public void PauseGame(GameObject gameObject)

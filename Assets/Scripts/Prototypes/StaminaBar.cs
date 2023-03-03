@@ -13,6 +13,7 @@ namespace FelineFrenzy.UI
     {
         //Attributes:
         private float currentValue;
+        private const float EMPTY = 0.0f;
         [SerializeField] private float maximumValue;
 
         //Constructor:
@@ -49,6 +50,7 @@ namespace FelineFrenzy.UI
         public float Decimal { get => currentValue / maximumValue; }
 
         public void Reset() => currentValue = maximumValue;
+        public void Empty() => currentValue = default;
 
         /**
          *  Subtracts stamina by the value specified if enough stamina is present.
@@ -58,7 +60,7 @@ namespace FelineFrenzy.UI
          */
         public bool Subtract(float substitution)
         {
-            if (substitution > currentValue) return false;
+            if (currentValue - substitution < EMPTY) return false;
 
             currentValue -= substitution;
 
@@ -68,7 +70,7 @@ namespace FelineFrenzy.UI
         public void Add(float addition)
         {
             currentValue += addition;
-            if (currentValue > addition) currentValue = maximumValue;
+            if (currentValue > maximumValue) currentValue = maximumValue;
         }
     }
 
@@ -89,7 +91,7 @@ namespace FelineFrenzy.UI
         //Methods:
         private void Awake() => slider = GetComponent<Slider>();
 
-        protected void Update()
+        protected void LateUpdate()
         {
             if (slider == null || target == null) return;
 
