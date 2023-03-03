@@ -97,6 +97,7 @@ namespace FelineFrenzy.Prototypes
             else if (Input.GetKeyDown(jumpKey) && doubleJump && stamina.Subtract(jumpCost))
             {
                 doubleJump = false;
+                uRigidbody.velocity -= uRigidbody.velocity * Vector2.up;
                 uAnimator.SetTrigger(jumpAnim);
                 uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                 uAudioSource.PlayOneShot(jumpSoundEffect);
