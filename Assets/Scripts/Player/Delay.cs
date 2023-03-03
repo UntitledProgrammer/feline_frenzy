@@ -25,7 +25,7 @@ namespace FelineFrenzy.Game
         public void Update()
         {
             currentTime += Time.deltaTime;
-            textBox.text = currentTime.ToString("F");
+            textBox.text = (delay - currentTime).ToString("F");
 
             if(currentTime >= delay) Exit();
         }
