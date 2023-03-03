@@ -56,6 +56,7 @@ namespace FelineFrenzy.Prototypes
 
         [Header("OnDestroy")]
         public UnityEvent onRespawn;
+        private bool doubleJump = true;
 
         //Properties:
         public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, jumpRaycast).collider; }
@@ -92,20 +93,23 @@ namespace FelineFrenzy.Prototypes
                 uAnimator.SetTrigger(dashAnim);
                 uAudioSource.PlayOneShot(dashSoundEffect);
                 StartCoroutine(Dash(dashTime, dashVelocity));
-            }  
-            else if(Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))
+            }
+            else if (Input.GetKeyDown(jumpKey) && doubleJump && stamina.Subtract(jumpCost))
             {
-                stamina.Empty();
+                doubleJump = false;
                 uAnimator.SetTrigger(jumpAnim);
                 uRigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                 uAudioSource.PlayOneShot(jumpSoundEffect);
             }
+
+            else stamina.Add(staminaRecovery * Time.deltaTime);
         }
 
         private void Grounded()
         {
             //Recover stamina.
             stamina.Add(staminaRecovery * Time.deltaTime);
+            doubleJump = true;
 
             //Jump.
             if (Input.GetKeyDown(jumpKey) && stamina.Subtract(jumpCost))

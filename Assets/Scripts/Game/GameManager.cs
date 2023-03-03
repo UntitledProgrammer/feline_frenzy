@@ -93,7 +93,7 @@ namespace FelineFrenzy.Core
             timeActive += Time.deltaTime;
 
             //Load next chunk?
-            if (previous != null && Distance(current.Left, playerTransform.position) < -1.0f) { Destroy(previous.gameObject); }
+            if (previous != null && Distance(current.Left, playerTransform.position) < -4.0f) { Destroy(previous.gameObject); }
             if (Distance(current.Right, playerTransform.position) > current.extent/1.5f) return;
 
             //Player has passed flag point.
