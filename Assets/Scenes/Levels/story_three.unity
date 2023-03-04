@@ -72171,8 +72171,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080165147556772972, guid: d92190ef132588f458f145bca3fa3997,
         type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080165147556772972, guid: d92190ef132588f458f145bca3fa3997,
+        type: 3}
+      propertyPath: airVelocity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080165147556772972, guid: d92190ef132588f458f145bca3fa3997,
+        type: 3}
       propertyPath: jumpRaycast
       value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080165147556772972, guid: d92190ef132588f458f145bca3fa3997,
+        type: 3}
+      propertyPath: groundedVelocity
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d92190ef132588f458f145bca3fa3997, type: 3}
@@ -90991,7 +91006,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.25
+  orthographic size: 2.31
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -91015,7 +91030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4806991883633985633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.489937, y: 7.6, z: -2.4397094}
+  m_LocalPosition: {x: 14.3, y: 2.3, z: -2.4397094}
   m_LocalScale: {x: 4.94066, y: 4.94066, z: 2.47033}
   m_Children:
   - {fileID: 4806991882742992526}

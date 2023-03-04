@@ -10,7 +10,7 @@ namespace FelineFrenzy.Core
     {
         //Attributes:
         public UnityEngine.Events.UnityEvent onFail;
-        [SerializeField] private UnityEditor.SceneAsset mainMenu;
+        //[SerializeField] private UnityEditor.SceneAsset mainMenu;
         [SerializeField] private TMPro.TextMeshProUGUI textBox;
         [SerializeField] private TMPro.TextMeshProUGUI attemptsBox;
         private float currentTime;
