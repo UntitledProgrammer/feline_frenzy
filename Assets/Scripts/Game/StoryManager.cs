@@ -62,6 +62,12 @@ namespace FelineFrenzy.Game
             LoadScene(index);
         }
 
+        public void ReloadCurrentStory()
+        {
+            if (stories.Count <= 0) return;
+            SceneManager.LoadScene(stories[currentSceneIndex].Name);
+        }
+
         public void ResetProgress()
         {
             for(int i = 0; i < stories.Count; i++)
