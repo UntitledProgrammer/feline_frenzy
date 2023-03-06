@@ -4,20 +4,42 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class MenuUtilities : MonoBehaviour
 {
-    //Methods:
-    public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    #region
+    [SerializeField] private AudioClip onClickSoundEffect;
+    private AudioSource audioSource;
+    #endregion
+
+    #region Methods
+    private void Awake() => audioSource = GetComponent<AudioSource>();
+    public IEnumerator LoadSceneDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
+
+    public void ReloadScene()
+    {
+        StartCoroutine(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        if(onClickSoundEffect)
+        {
+            audioSource.PlayOneShot(onClickSoundEffect);
+            StartCoroutine(LoadSceneDelay(sceneName, onClickSoundEffect.length));
+            return;
+        }
+
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
 
     public void LoadSceneAsync(string sceneName, float delay)
     {
         StartCoroutine(LoadSceneDelay(sceneName, delay));
-    }
-
-    public IEnumerator LoadSceneDelay(string sceneName, float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
     public void Quit() => Application.Quit();
@@ -59,4 +81,5 @@ public class MenuUtilities : MonoBehaviour
     {
         target.SetActive(!target.activeSelf);
     }
+    #endregion
 }
