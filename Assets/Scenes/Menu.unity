@@ -925,26 +925,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8786398}
-        m_MethodName: StoryModeButton
-        m_Mode: 1
+      - m_Target: {fileID: 1411953811}
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8300000, guid: 1d2ec736c6c7caa4cbf6de67570e99f8, type: 3}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: level_select
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &856861711
@@ -1490,17 +1479,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8300000, guid: 1d2ec736c6c7caa4cbf6de67570e99f8, type: 3}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1411953811}
         m_MethodName: LoadScene
         m_Mode: 5
@@ -2203,7 +2181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1697489436}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Game Modes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,8 +2195,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697489435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 210.41, y: 13.306, z: -71.169}
-  m_LocalScale: {x: 0.1412706, y: 0.1412706, z: 0.1412706}
+  m_LocalPosition: {x: 267, y: 156, z: -71.169}
+  m_LocalScale: {x: 1.5125842, y: 1.5125842, z: 1.5125842}
   m_Children:
   - {fileID: 856861709}
   - {fileID: 1114698141}

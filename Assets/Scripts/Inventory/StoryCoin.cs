@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace FelineFrenzy.Interaction
 {
     [RequireComponent(typeof(Collider2D))]
@@ -29,4 +33,25 @@ namespace FelineFrenzy.Interaction
         }
         #endregion
     }
+
+    /*
+#if UNITY_EDITOR
+    [CustomEditor(typeof(StoryCoin))]
+    public class StoryCoin_Editor : Editor
+    {
+        //Attrubutes:
+        private StoryCoin self;
+
+        //Methods:
+        private void Awake() => self = (StoryCoin)target;
+
+        public override void OnInspectorGUI()
+        {
+            EditorGUILayout.TextField("Main Settings", EditorStyles.boldLabel);
+            self.value = EditorGUILayout.FloatField("Value", self.value);
+            self.playerTag = EditorGUILayout.TagField("Player Tag", self.playerTag);
+        }
+    }
+#endif
+    */
 }

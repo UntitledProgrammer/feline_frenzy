@@ -22,7 +22,7 @@ public class MenuUtilities : MonoBehaviour
 
     public void ReloadScene()
     {
-        StartCoroutine(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     public void LoadScene(string sceneName)

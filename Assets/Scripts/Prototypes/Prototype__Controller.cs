@@ -59,7 +59,7 @@ namespace FelineFrenzy.Prototypes
         private bool doubleJump = true;
 
         //Properties:
-        public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds, 0.0f, Vector2.down, jumpRaycast).collider; }
+        public bool IsGrounded { get => Physics2D.BoxCast(transform.position, bounds * transform.localScale, 0.0f, Vector2.down, jumpRaycast * transform.localScale.y).collider; }
         public float Velocity { get => IsGrounded ? groundedVelocity : airVelocity; }
 
         //Methods:
@@ -145,8 +145,8 @@ namespace FelineFrenzy.Prototypes
         {
             //Draw raycast that checks whether a player is grounded.
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * jumpRaycast);
-            Gizmos.DrawWireCube(transform.position + Vector3.down * jumpRaycast, bounds);
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * jumpRaycast * transform.localScale.y);
+            Gizmos.DrawWireCube(transform.position + Vector3.down * jumpRaycast * transform.localScale.y, bounds * transform.localScale);
         }
     }
 }
