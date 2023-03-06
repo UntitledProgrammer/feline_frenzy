@@ -20,6 +20,10 @@ public class Follow : MonoBehaviour
     [SerializeField] private float speed;
     private const float TOLERANCE = 0.1f;
 
+    //Properties:
+    public Transform Target { get => target; }
+    private Vector3 TargetPosition { get => target == null ? transform.position : target.transform.position + (Vector3)offset; }
+
     //Methods:
     private Vector3 EraseDepth(Vector2 vector) => new Vector3(vector.x * axis.x, vector.y * axis.y, default);
 
@@ -30,16 +34,18 @@ public class Follow : MonoBehaviour
 
     public void LateUpdate()
     {
-        if (target == null || Vector2.Distance(transform.position, target.position) <= TOLERANCE) return;
+        if (Vector2.Distance(transform.position, TargetPosition) <= TOLERANCE) return;
 
-        transform.position += speed * Time.deltaTime * (EraseDepth((target.transform.position - transform.position).normalized));
+        transform.position += speed * Time.deltaTime * (EraseDepth((TargetPosition - transform.position).normalized));
     }
 
     public void Centre()
     {
         if (target == null) return;
-        transform.position = axis * target.transform.position + offset;
+        transform.position = new Vector3(TargetPosition.x - transform.position.x, TargetPosition.y - transform.position.y, default) + (Vector3)offset;
     }
+
+    public void SetOffset(Vector2 offset) => this.offset = offset;
 }
 
 #if UNITY_EDITOR
@@ -58,6 +64,8 @@ public class FollowEditor : UnityEditor.Editor
     public override void OnInspectorGUI()
     {
         if (UnityEngine.GUILayout.Button("Centre")) { self.Centre(); }
+
+        if(UnityEngine.GUILayout.Button("Set Offset") && self.Target != null) self.SetOffset(self.transform.position - self.Target.position);
         DrawDefaultInspector();
     }
 }
