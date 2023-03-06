@@ -13,8 +13,13 @@ public class MenuUtilities : MonoBehaviour
     #endregion
 
     #region Methods
-    private void Awake() => audioSource = GetComponent<AudioSource>();
-    public IEnumerator LoadSceneDelay(string sceneName, float delay)
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+    }
+
+        public IEnumerator LoadSceneDelay(string sceneName, float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);

@@ -22,3 +22,6 @@ MonoBehaviour:
   - unlocked: 0
     record: 0
     name: story_three
+  - unlocked: 0
+    record: 0
+    name: story_four

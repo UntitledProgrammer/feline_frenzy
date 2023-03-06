@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 namespace FelineFrenzy.Game
 {
     [System.Serializable]
-    public struct StoryMeta
+    public class StoryMeta
     {
         //Attributes:
         public bool unlocked;
@@ -16,6 +16,10 @@ namespace FelineFrenzy.Game
         //Properties:
         public string Name { get => name; }
         public bool Unlocked { get => unlocked; set => unlocked = value; }
+
+        //Methods:
+        public void Lock() { unlocked = false; }
+        public void Unlock() { unlocked = true; }
         
         //Constructor:
         public StoryMeta(string name, bool unlocked = false)
@@ -26,7 +30,7 @@ namespace FelineFrenzy.Game
         }
     }
 
-    [CreateAssetMenu(fileName = "StoryManager", menuName = "Game/StoryManager", order = 0)]
+    [CreateAssetMenu(fileName = "StoryManager", menuName = "Game/StoryManager", order = 0), System.Serializable]
     public class StoryManager : ScriptableObject
     {
         //Attributes:
@@ -37,7 +41,12 @@ namespace FelineFrenzy.Game
         public void LoadNext()
         {
             //If the final story level has been played return to the first scene (menu) in the build index.
-            SceneManager.LoadScene(currentSceneIndex+1 >= stories.Count ? SceneManager.GetSceneAt(default).name :  stories[++currentSceneIndex].Name);
+            if (currentSceneIndex + 1 >= stories.Count) { SceneManager.LoadScene(SceneManager.GetSceneAt(default).name); return; }
+            
+            //Unlock and load the next story level.
+            currentSceneIndex++;
+            stories[currentSceneIndex].Unlock();
+            SceneManager.LoadScene( stories[currentSceneIndex].Name);
         }
 
         private void LoadScene(int index)

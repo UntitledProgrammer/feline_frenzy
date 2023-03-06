@@ -9,30 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 68bb338a38f5e7d4a8c12cff08aac9b1
   - enabled: 1
-    path: Assets/Scenes/Levels/story_alpha.unity
-    guid: 7a99a8154b5954144a78004f7f5ff810
-  - enabled: 0
-    path: Assets/Scenes/Tom_Proto.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/level_select.unity
+    guid: b4f9bb6f00436c24da960270094405d8
   - enabled: 1
-    path: Assets/Scenes/Levels/story_one.unity
-    guid: 9ce16831234c2b34884f13ece1e52062
+    path: Assets/Scenes/Levels/story_tutorial.unity
+    guid: 56df63474a45ef44597613a85639a915
   - enabled: 1
     path: Assets/Scenes/Levels/story_two.unity
     guid: 5b41dc90f8ea83c4ca665003dc7c97d8
   - enabled: 1
-    path: Assets/Scenes/Levels/splash_alpha.unity
-    guid: 8a1ec177dc4889549aab4b9456fd286a
+    path: Assets/Scenes/Levels/story_three.unity
+    guid: c6f973d1b89cd77469c03f8860af7459
   - enabled: 1
-    path: Assets/Scenes/level_select.unity
-    guid: b4f9bb6f00436c24da960270094405d8
-  - enabled: 1
-    path: Assets/Scenes/credits.unity
-    guid: 2a3d642b303cc384aae991a92cbc9c44
+    path: Assets/Scenes/Levels/story_four.unity
+    guid: 051455473d799d948a5a2f9fc928a936
   - enabled: 1
     path: Assets/Scenes/Levels/survival.unity
     guid: 4269232e61ee75241b07aa502c44fb5d
   - enabled: 1
-    path: Assets/Scenes/Levels/story_three Ali.unity
-    guid: a449b05b6842b8445b63c22ac031b872
+    path: Assets/Scenes/credits.unity
+    guid: 2a3d642b303cc384aae991a92cbc9c44
   m_configObjects: {}
