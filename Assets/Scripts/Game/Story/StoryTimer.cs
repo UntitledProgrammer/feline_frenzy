@@ -31,6 +31,7 @@ namespace FelineFrenzy.Game.Story
         public void Restart()
         {
             currentTime = default;
+            onLimitReached.Invoke();
         }
 
         public void AddTime(float amount)
@@ -47,6 +48,7 @@ namespace FelineFrenzy.Game.Story
             //Reached time limit.
             if(currentTime >= timeLimit)
             {
+                currentTime = default;
                 onLimitReached.Invoke();
             }
         }

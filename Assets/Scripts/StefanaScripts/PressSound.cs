@@ -50,12 +50,9 @@ namespace FelineFrenzy.UI
 
             Vector2 mousePosition = Input.mousePosition;
 
-            Debug.Log("Click");
-
             if (mousePosition.x >= BottomLeft.x && mousePosition.x <= TopRight.x &&
                 mousePosition.y >= BottomLeft.y && mousePosition.y <= TopRight.y)
             {
-                Debug.Log("Event Detected");
                 audioSource.PlayOneShot(soundEffect, volume);
             }
         }
