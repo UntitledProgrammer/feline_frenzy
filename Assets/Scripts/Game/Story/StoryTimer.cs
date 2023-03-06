@@ -9,6 +9,8 @@ namespace FelineFrenzy.Game.Story
     public class StoryTimer : MonoBehaviour
     {
         #region Attributes
+        public UnityEngine.Events.UnityEvent onAwake;
+        public UnityEngine.Events.UnityEvent onLimitReached;
         public StoryManager storyManager;
         [SerializeField] private float timeLimit;
         private float currentTime;
@@ -18,8 +20,22 @@ namespace FelineFrenzy.Game.Story
         #region Methods
         public void Awake()
         {
+            //Initalise components and timer.
             textBox = GetComponent<TMPro.TextMeshProUGUI>();
             currentTime = default;
+
+            //Invoke any starting methods/functions.
+            onAwake.Invoke();
+        }
+
+        public void Restart()
+        {
+            currentTime = default;
+        }
+
+        public void AddTime(float amount)
+        {
+            currentTime -= amount > currentTime ? currentTime : amount;
         }
 
         public void LateUpdate()
@@ -31,7 +47,7 @@ namespace FelineFrenzy.Game.Story
             //Reached time limit.
             if(currentTime >= timeLimit)
             {
-                storyManager.ReloadCurrentStory();
+                onLimitReached.Invoke();
             }
         }
         #endregion
