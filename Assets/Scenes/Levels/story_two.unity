@@ -8697,6 +8697,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9080165147556772962, guid: d92190ef132588f458f145bca3fa3997,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9080165147556772963, guid: d92190ef132588f458f145bca3fa3997,
         type: 3}
       propertyPath: m_RootOrder
