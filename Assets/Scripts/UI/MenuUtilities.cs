@@ -20,6 +20,8 @@ public class MenuUtilities : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
+    public void Unfocus() => UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null, null);
+
     public void ReloadScene()
     {
         LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
