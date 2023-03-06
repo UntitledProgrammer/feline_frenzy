@@ -16,7 +16,7 @@ MonoBehaviour:
   - unlocked: 1
     record: 0
     name: story_one
-  - unlocked: 1
+  - unlocked: 0
     record: 0
     name: story_two
   - unlocked: 0

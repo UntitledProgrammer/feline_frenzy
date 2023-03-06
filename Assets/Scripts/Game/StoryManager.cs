@@ -37,7 +37,7 @@ namespace FelineFrenzy.Game
         public void LoadNext()
         {
             //If the final story level has been played return to the first scene (menu) in the build index.
-            SceneManager.LoadScene(currentSceneIndex >= stories.Count ? SceneManager.GetSceneAt(default).name :  stories[++currentSceneIndex].Name);
+            SceneManager.LoadScene(currentSceneIndex+1 >= stories.Count ? SceneManager.GetSceneAt(default).name :  stories[++currentSceneIndex].Name);
         }
 
         private void LoadScene(int index)
