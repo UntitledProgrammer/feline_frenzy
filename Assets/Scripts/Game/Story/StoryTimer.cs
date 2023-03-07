@@ -28,6 +28,11 @@ namespace FelineFrenzy.Game.Story
             onAwake.Invoke();
         }
 
+        public void End()
+        {
+            storyManager.SetRecord(storyManager.ActiveStoryIndex, currentTime);
+        }
+
         public void Restart()
         {
             currentTime = default;

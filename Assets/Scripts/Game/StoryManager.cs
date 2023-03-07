@@ -37,7 +37,23 @@ namespace FelineFrenzy.Game
         public List<StoryMeta> stories = new List<StoryMeta>();
         private int currentSceneIndex = 0;
 
+        //Properties:
+        public int ActiveStoryIndex { get => currentSceneIndex; }
+        public int TotalStories { get => stories.Count; }
+
+        //Operators:
+        public StoryMeta this[int index]
+        {
+            get => index < 0 || index >= stories.Count ? default : stories[index];
+        }
+
         //Methods:
+        public void SetRecord(int story, float time)
+        {
+            if (story < 0 || story >= stories.Count) return;
+            stories[story].record = time;
+        }
+
         public void LoadNext()
         {
             //If the final story level has been played return to the first scene (menu) in the build index.
