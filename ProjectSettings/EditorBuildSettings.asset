@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scoreboard.unity
     guid: e18d11f35bd7f5d4282b449c3361c0fa
+  - enabled: 1
+    path: Assets/Scenes/how_to_play.unity
+    guid: 7ecb3e6e4c38ff248a9c759f5bcf4d55
   m_configObjects: {}
