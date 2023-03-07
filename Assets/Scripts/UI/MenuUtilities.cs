@@ -19,7 +19,7 @@ public class MenuUtilities : MonoBehaviour
         if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-        public IEnumerator LoadSceneDelay(string sceneName, float delay)
+    public IEnumerator LoadSceneDelay(string sceneName, float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
@@ -34,7 +34,7 @@ public class MenuUtilities : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        if(onClickSoundEffect)
+        if(audioSource && onClickSoundEffect)
         {
             audioSource.PlayOneShot(onClickSoundEffect);
             StartCoroutine(LoadSceneDelay(sceneName, onClickSoundEffect.length));
