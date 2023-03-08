@@ -47997,9 +47997,8 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4
   escapeKey: 32
-  delay: 2
-  end: {x: 11.02, y: 0}
-  time: 0
+  delay: 2.48
+  end: {x: 10.22, y: 0}
 --- !u!61 &1344877468
 BoxCollider2D:
   m_ObjectHideFlags: 0

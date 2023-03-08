@@ -23,7 +23,7 @@ namespace FelineFrenzy.Obstacles
         [SerializeField] private Vector2 end;
         private Vector2 start;
         private Vector2 targetOffset;
-        public float time;
+        private float time;
         private Rigidbody2D target;
         private Animator animator;
         private bool activated = false;
